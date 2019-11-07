@@ -7,9 +7,13 @@
     <body>
     <script>
         function helloWorld() {
-            return console.log("Hello World.")
+            return console.log(`Hello World.`);
+        }
+        function helloName(name) {
+            return console.log(`Hello ${name}.`);
         }
         helloWorld();
+        helloName('Bob');
     </script>
     </body>
 </html>
