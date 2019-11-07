@@ -1,0 +1,43 @@
+ .fancy-header {
+     color: purple;
+     text-decoration: underline;
+ }
+ h1 {
+     text-align: center;
+ }
+ header {
+     color: red;
+     text-decoration: underline;
+ }
+ body {
+     background-color: #808080;
+     background-image: url("../img/yellow_house.png");
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     background-position: center;
+     font-family: fantasy;
+ }
+ ul {
+     list-style: square;
+ }
+ table {
+     padding: 10em;
+     font-size: 5em;
+ }
+
+ a:link {
+     color:blue;
+ }
+
+ a:visited {
+     color:purple;
+ }
+
+ a:hover {
+     color:red;
+ }
+
+ a:active {
+     color:green;
+ }
+
