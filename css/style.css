@@ -5,7 +5,7 @@
  h1 {
      text-align: center;
  }
- header {
+ h2, h3, h4, h5 {
      color: red;
      text-decoration: underline;
  }
