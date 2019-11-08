@@ -1,9 +1,4 @@
-body, html {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Ubuntu, sans-serif;
+:root {
     --bg-info: #ADD8E6;
     --text-info: blue;
     --bg-success: #90EE90;
@@ -13,19 +8,36 @@ body, html {
     --bg-error: #FFCCCB;
     --text-error: #A63232;
 }
-.message_message_info {
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    margin: .5em 20em .5em 20em;
+    border: 1px solid lightgrey;
+    border-radius: .25em;
+    padding: .5em;
+    font-size: .75em;
+}
+
+.message_info {
     background-color: var(--bg-info);
     color: var(--text-info);
 }
-.message_message_success {
+.message_success {
     background-color: var(--bg-success);
     color: var(--text-success);
 }
-.message_message_warning {
+.message_warning {
     background-color: var(--bg-warning);
     color: var(--text-warning);
 }
-.message_message_error {
+.message_error {
     background-color: var(--bg-error);
     color: var(--text-error);
 }

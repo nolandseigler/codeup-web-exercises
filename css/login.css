@@ -63,7 +63,7 @@ fieldset {
     color: white;
     font-weight: bold;
     /* The border of this element should be 1px, and its color should be light grey */
-    border: 1px #d3d3d3;
+    border: 1px solid #d3d3d3;
     background-color: #0fb784;
 }
 

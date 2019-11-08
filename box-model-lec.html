@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Box Model</title>
+
+	<style>
+		/*
+			BOX MODEL - a way to space elements from each other
+
+			Overall element size with box-sizing: content-box...
+				height = height + padding-top + padding-bottom + border-top + border-bottom
+				width = width + padding-left + padding-right + border-left + border-right
+
+			Specifying 1 value, 2 values, 3 values, 4 values (padding, margin, border)
+			1 = all sides
+			2 = y-axis x-axis
+			3 = top x-axis bottom
+			4 = top right bottom left
+
+			Overall element size with box-sizing: border-box...
+				height = height
+				width = width
+
+			>>> For more info on box-sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+		*/
+	.box {
+		width: 300px;
+		height: 300px;
+		padding: 5px;
+		background-color: yellow;
+	}
+	.first-box {
+		background-color: blue;
+		margin-bottom: 5px;
+	}
+	.second-box {
+		background-color: #808080;
+		box-sizing: border-box;
+	}
+	.box h1 {
+		font-size: 10px;
+	}
+	.box p{
+		font-size: 9px;
+	}
+	.div1 {
+		border: yellow solid 1px;
+	}
+	.paragraph1 {
+		border: red solid 1px;
+	}
+	.paragraph2 {
+		border: purple solid 1px
+	}
+
+	</style>
+</head>
+<body>
+
+	<h1>Box Model Lecture!</h1>
+
+	<hr>
+	<h4>Here are some boxes...</h4>
+	<!--	TODO TOGETHER: EXPLORE BOXES. -->
+	<div class="box first-box">
+		<h1>First Box Content</h1>
+		<p>The total width of this box is: 310px</p>
+	</div>
+	<div class="box second-box">
+		<h1>Second Box Content</h1>
+		<p>The total width of this box is: 290px</p>
+	</div>
+
+
+
+
+
+
+	<hr>
+	<h4>Divs & Spans</h4>
+
+	<div class="div1">
+		<p class="paragraph1">This text is inside of a paragraph tag inside of a div. < p > && < div > are block level elements </p>
+	</div>
+
+	<p class="paragraph2"><span class="span1">This text is inside of a span inside of a paragraph tag</span></p>
+
+</body>
+</html>
