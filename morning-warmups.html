@@ -16,9 +16,22 @@
             let sum = x + y;
             return sum;
         }
+        let addFour = function(a, b, c, d) {
+            let result = a + b + c +d;
+            return result;
+        }
+        // function addFour(a, b, c, d) {
+        //     let result = a + b + c +d;
+        //     return result;
+        // }
         helloWorld();
         helloName('Bob');
         console.log(add(1, 1));
+        console.log(addFour(1, 2, 3, 4));
+        console.log(addFour("1", 2, 3, 4));
+        console.log(addFour(1, 2, 3, "4"));
+        console.log(addFour(add(1, 2), 2, 3, 4));
+
     </script>
     </body>
 </html>
