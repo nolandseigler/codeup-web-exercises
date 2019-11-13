@@ -40,6 +40,8 @@ section {
     /* enter needed declarations here */
     display: flex;
     align-items: center;
+    margin-top: .75em;
+    margin-bottom: .75em;
 
 }
 
@@ -114,8 +116,7 @@ section:nth-of-type(3) h3 {
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
-    justify-content: space-around;
-    padding: 1em;
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -129,8 +130,10 @@ section:nth-of-type(6) {
     height: 14em;
     /* enter needed declarations here */
     flex-wrap: wrap;
-    align-content: center;
+    /*align-content: center;*/
     justify-content: space-between;
+    align-items: center;
+
 }
 
 .grey-box {
