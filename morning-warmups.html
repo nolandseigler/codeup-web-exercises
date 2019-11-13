@@ -16,7 +16,7 @@
             let sum = x + y;
             return sum;
         }
-        let addFour = function(a, b, c, d) {
+        const addFour = function(a, b, c, d) {
             let result = a + b + c +d;
             return result;
         }
@@ -24,6 +24,13 @@
         //     let result = a + b + c +d;
         //     return result;
         // }
+        const areaOfRectangle = function(l, w) {
+            let area = l * w;
+            return area;
+        }
+        const areaOfRectangleArrow = (l, w) => {
+            return l * w;
+        }
         helloWorld();
         helloName('Bob');
         console.log(add(1, 1));
@@ -31,6 +38,8 @@
         console.log(addFour("1", 2, 3, 4));
         console.log(addFour(1, 2, 3, "4"));
         console.log(addFour(add(1, 2), 2, 3, 4));
+        console.log(areaOfRectangle(2, 2));
+        console.log(areaOfRectangleArrow(2, 2));
 
     </script>
     </body>
