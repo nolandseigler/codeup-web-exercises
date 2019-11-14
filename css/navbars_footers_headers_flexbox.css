@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #333333;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+}
+nav a:hover {
+    background: black;
+}
+nav ul li:nth-child(4) {
+    margin-left: auto;
+}
+/* mobile devices */
+@media all and (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav {
+        display: inline-block;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 15em;
+    }
+    main {
+        width: calc(100% - 15em);
+    }
+    nav a {
+        width: 100%;
+    }
+    nav ul li:nth-child(4) {
+        margin-left: 0;
+    }
+}
+body {
+    /*margin: 0;*/
+    font-family: Roboto;
+    background: orange;
+}
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+h3 {
+    color: grey;
+}
+hr {
+    border-top: 1px solid whitesmoke;
+    width: 90px;
+}
+.card {
+    margin: .5em;
+    border-radius: 2px;
+    background: white;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+img {
+    border-radius: 120px;
+    width: 120px;
+}
+i {
+    color: grey;
+}
+.text-section {
+    position: relative;
+    bottom: 1.5em;
+}
+.icons i {
+    font-size: 2.2em;
+    width: 160px;
+    display: flex;
+    justify-content: space-evenly;
+}
+header, main {
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1em;
+    background: darkorange;
+}
+main {
+    min-height: 100vh;
+    /*
+        the following declarations control the layout for all the cards,
+        creating a responsive layout without media queries
+    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}

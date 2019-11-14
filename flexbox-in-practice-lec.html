@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Flexbox in Practice</title>
+
+	<style>
+
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Helvetica;
+			font-weight: bold;
+		}
+
+
+		.flex-container {
+			border: 3px solid goldenrod;
+			display: flex;
+			flex-direction: row;
+			height: 10em;
+			/*justify-content: center;*/
+		}
+
+		.flex-item {
+			background: #BFD45D;
+			border: 2px solid #F9EFD6;
+			padding: 1em;
+			/*margin: auto;*/
+		}
+		.first-item {
+		margin-bottom: auto;
+		margin-right: auto;
+		}
+		.second-item {
+		/*margin-right: auto;*/
+		}
+		.third-item {
+		/*margin: auto;*/
+		}
+
+	</style>
+</head>
+<body>
+	<div class="flex-container">
+		<div class="flex-item first-item" >Flex Item 1</div>
+		<div class="flex-item second-item" >Flex Item 2</div>
+		<div class="flex-item third-item" >Flex Item 3 </div>
+	</div>
+
+
+<!--
+	**********************************
+			Centering and Aligning
+	**********************************
+
+	Centering block-level elements horizontally can be done with margin: 0 auto. This can also be achieved with flexbox by adding the following declarations to parent element:
+
+	TODO TOGETHER: Center the flex item using flexbox
+
+	>> Vertical Centering - align-items: center
+
+	TODO TOGETHER: Vertically center the flex item
+
+
+	TODO TOGETHER: Margin auto will also center the flex item
+
+
+	TODO TOGETHER:
+		Add two more flex items. remove the height, justify-content, and align-items from the flex container.
+		Add margin-left: auto to item3
+
+	TODO: Add margin-right: auto to item2
+
+
+	**********************************
+			Styling Components
+	**********************************
+		TODO: Break into small groups 2 - 3 people and review the following from the curriculum. Copy code snippets and explore the different styles.
+			Styling Components: Navbars
+			Styling Components: Cards
+			Styling Components: Footres
+-->
+
+</body>
+</html>
