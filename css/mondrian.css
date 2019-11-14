@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+main {
+    /* add margin to make the top of our grid more visible */
+    margin: .5em;
+    background: lightgreen;
+    display: grid;
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+    /*grid-gap: 1px;*/
+    grid-template: repeat(8, 1fr) / repeat(8,1fr);
+
+}
+#container {
+/*    !*height: 100%;*!*/
+/*    !*width: 100%;*!*/
+    display: flex;
+    margin: auto;
+/*    !*justify-content: center;*!*/
+/*    box-sizing: border-box;*/
+/*    padding: 50%;*/
+}
+.box {
+    border: 4px solid black;
+}
+.blue {
+    background-color: #2F447A;
+}
+.yellow {
+    background-color: #FCCB08;
+}
+.white {
+    background-color: #FFFFFF;
+}
+.red {
+    background-color: #DD1A21;
+}
+#top-left {
+    grid-area: 1 / 1 / 3 / 3;
+}
+#hi-mid-left {
+    grid-area: 3 / 1 / 6 / 3;
+}
+#low-mid-left {
+    grid-area: 6/ 1 / 8 / 3;
+}
+#bottom-left {
+    grid-area: 8 / 1 / 9 / 3;
+}
+#top-right {
+    grid-area: 1 / 3 / 4 / 9;
+}
+#middle-middle {
+    grid-area: 4 / 3 / 8 / 5;
+}
+#bottom-right {
+    grid-area: 8 / 3 / 9 / 9;
+}
+#hi-mid-right {
+    grid-area: 4 / 5 / 6 / 9;
+}
+#low-mid-right {
+    grid-area: 6 / 5 / 8 / 9;
+}
+
+/*
+    These classes are just a way to explicitly place the grey tiles
+    so that other items may be overlaid.
+*/
+/*.one {grid-area: 1 / 1 / 2 / 2}*/
+/*.two {grid-area: 1 / 2 / 2 / 3}*/
+/*.three {grid-area: 1 / 3 / 2 / 4}*/
+/*.four {grid-area: 2 / 1 / 3 / 2}*/
+/*.five {grid-area: 2 / 2 / 3 / 3}*/
+/*.six {grid-area: 2 / 3 / 3 / 4}*/
+/*.seven {grid-area: 3 / 1 / 4 / 2}*/
+/*.eight {grid-area: 3 / 2 / 4 / 3}*/
+/*.nine {grid-area: 3 / 3 / 4 / 4}*/

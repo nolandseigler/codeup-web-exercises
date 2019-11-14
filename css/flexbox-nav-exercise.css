@@ -9,6 +9,7 @@ nav {
     color: black;
     text-decoration: none;
     display: flex;
+    position: relative;
 }
 nav a {
     color: black;
@@ -16,7 +17,6 @@ nav a {
     font-weight: bold;
     display: inline-block;
     padding: .5em;
-    font-family: 'Work Sans', sans-serif;
 }
 nav a:hover {
     color: blue;
@@ -30,6 +30,7 @@ ul {
     display: flex;
     margin-right: auto;
     padding: 0;
+    font-family: 'Work Sans', sans-serif;
 
 
 }
@@ -39,11 +40,14 @@ ul {
     padding-top: .2em;
     padding-bottom: .2em;
     position: absolute;
-    left: 48vw;
-    bottom: 92.5vh;
+    left: 46%;
+    /*transform: translateX(-48%);*/
+    top: 50%;
+    transform: translateY(-50%);
 }
 .right-nav {
     display: flex;
     margin-left: auto;
     align-items: center;
+    font-family: 'Work Sans', sans-serif;
 }
