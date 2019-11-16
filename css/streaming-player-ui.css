@@ -36,7 +36,7 @@ header {
 
 nav {
     /* TODO: define the grid area of nav such that it takes up the second column of the second row  */
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: 2 / 2 / span 1 / span 1;
 }
 
 main {
@@ -52,6 +52,10 @@ main {
     grid-row-gap: 1em;
     overflow: auto;
 }
+
+/*main::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
 
 header ul {
     /* TODO: use flex box to horizontally line up all list items */
@@ -122,7 +126,7 @@ nav a:hover {
     border-radius: 10px;
     position: relative;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
-    transition-property: border;
+    /*transition-property: border;*/
     transition-duration: .2s;
 }
 
