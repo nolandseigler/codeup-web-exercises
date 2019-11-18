@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* screen sizes 500px and up */
+
+body {
+    /*height: 100vh;*/
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 2fr 1.5fr 6fr 6fr repeat(2, 4fr) 1fr;
+    /*grid-template-columns: 10% 80% 10%;*/
+    grid-template-areas:
+            "alert-info"
+            "h1"
+            "nav"
+            "header-img"
+            "main"
+            "sub-section"
+            "footer";
+}
+.alert-info{
+    grid-area: alert-info;
+    display: flex;
+    justify-content: center;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: lightblue;
+    width: 95%;
+}
+.alert-info a {
+    text-decoration: none;
+    color: black;
+}
+.alert-info:nth-child(1) {
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+h1 {
+    grid-area: h1;
+    /*padding: 1em;*/
+    align-self: flex-start;
+    text-align: center;
+}
+nav {
+    grid-area: nav;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+li {
+    padding: 1em;
+    background-color: lightgrey;
+    width: 95%;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    margin: .5em 0;
+ }
+
+/*li:nth-child(1) {*/
+/*    padding-top: 0em;*/
+/*    padding-right: 2em;*/
+/*    padding-bottom: 2em;*/
+/*    padding-left: 2em;*/
+/*}*/
+.header-img {
+    grid-area: header-img;
+    margin: auto;
+}
+.header-img img {
+    width: 339px;
+    height: 224px;
+}
+#main {
+    grid-area: main;
+    margin-top: .5em;
+}
+.sub-section {
+    grid-area: sub-section;
+    font-style: italic;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+}
+
+@media all and (min-width:720px) {
+    body {
+        /*height: 100vh;*/
+        width: 100vw;
+        display: grid;
+        grid-template-rows: 1fr 4fr 4fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "h1 . . nav"
+            "header-img header-img header-img header-img"
+            "main main main sub-section"
+            "footer footer footer footer"
+
+    }
+    .alert-info {
+        display: none;
+    }
+    h1 {
+        margin-top: 1em;
+    }
+    .nav-links {
+        flex-direction: row;
+        margin-top: 1em;
+    }
+    li {
+        background-color: white;
+    }
+    .header-img img {
+        width: 890px;
+        height: 385px;
+        margin: 0 2.5em;
+    }
+    .header-img {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .main {
+        margin-left: 2em;
+        margin-right: 1em;
+    }
+    h2 {
+        margin-bottom: 1em;
+    }
+    footer {
+        align-items: flex-start;
+        margin-left: 2em;
+    }
+}
