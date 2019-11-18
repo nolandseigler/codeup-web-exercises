@@ -34,10 +34,13 @@
         function firstItem(array) {
             return array[0];
         }
-        function arrayLength(array) {
-            return array.length;
+        function arrayLength(inputArray) {
+            return inputArray.length;
         }
-        const animalsAndNumber = ['cat', 'moose', 'beaver', 4];
+        const lastItem = function (inputArray) {
+            return inputArray[inputArray.length - 1];
+        }
+        const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];
         helloWorld();
         helloName('Bob');
         console.log(add(1, 1));
@@ -50,6 +53,7 @@
         console.log(firstItem([1, 2, 3, 4]));
         console.log(firstItem(animalsAndNumber));
         console.log(arrayLength(animalsAndNumber));
+        console.log(lastItem(animalsAndNumber));
 
     </script>
 <!--    li.item$*5-->
