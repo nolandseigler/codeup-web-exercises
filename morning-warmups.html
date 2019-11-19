@@ -41,6 +41,18 @@
             return inputArray[inputArray.length - 1];
         }
         const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];
+
+        const nthItem = function (inputArray, inputNumber) {
+            if (inputNumber === 0) {
+                return "0th is not an nth.";
+            } else if (inputNumber > inputArray.length) {
+                return `${inputNumber} is larger than the number of children.`
+            }
+            else {
+                return inputArray[inputNumber - 1];
+            }
+        }
+
         helloWorld();
         helloName('Bob');
         console.log(add(1, 1));
@@ -54,7 +66,7 @@
         console.log(firstItem(animalsAndNumber));
         console.log(arrayLength(animalsAndNumber));
         console.log(lastItem(animalsAndNumber));
-
+        console.log(nthItem(animalsAndNumber, 27));
     </script>
 <!--    li.item$*5-->
     <li class="item1"></li>
