@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://kit.fontawesome.com/ed020a3921.js" crossorigin="anonymous"></script>
+    <title>Order Pizza</title>
+</head>
+<body>
+<!--    START NAV-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link btn-light" href="#">Pizza World<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link btn-light active" href="#">Order online</a>
+                <a class="nav-item nav-link btn-light" href="#">Menu</a>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you!</button>
+            </form>
+        </div>
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-user fa-xs" style="color:#777777"> Sign up</i>
+        </a>
+    </nav>
+<!--    END NAV-->
+<!--    START BIG CONTAINER-->
+<div class="container">
+<!--    START JUMBO-->
+    <div class="jumbotron jumbotron-fluid" id="jumbo-container">
+        <h1 class="display-4 text-center">Welcome to Pizza World!</h1>
+    </div>
+<!--    END JUMBO-->
+    <h2>Build your own pizza!</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><span class="badge badge-secondary rounded-pill">1</span> Size and crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-secondary rounded-pill">2</span> Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-secondary rounded-pill">3</span> Toppings</a>
+        </li>
+    </ul>
+    <div class="card">
+        <div class="card-header">
+            Choose size and crust
+        </div>
+        <div class="card-body">
+<!--            CARD L2-->
+            <!--        CARD CONTAINER-->
+            <div class="container" id="inner-card-container">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        Hand Tossed
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Garlic seasoned crust with a rich, buttery.</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="crust" id="small-hand-toss-radio" value="small-hand-tossed-crust">
+                                    <label class="form-check-label" for="small-hand-toss-radio">
+                                        Small (10")
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="crust" id="medium-hand-tossed-radio" value="medium-hand-tossed-crust">
+                                    <label class="form-check-label" for="medium-hand-tossed-radio">
+                                        Medium (12")
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-3 mb-3">
+                    <div class="card-header">
+                        Crispy Thin
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Thin enough for optimum crispy to crunchy ratio.</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="crust" id="small-thin-radio" value="small-thin-crust">
+                                    <label class="form-check-label" for="small-thin-radio">
+                                        Medium (12")
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="crust" id="medium-thin-radio" value="medium-thin-crust">
+                                    <label class="form-check-label" for="medium-thin-radio">
+                                        Large (14")
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <a href="#" class="btn btn-primary float-right">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
