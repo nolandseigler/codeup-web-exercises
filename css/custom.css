@@ -2,14 +2,10 @@
 
 #jumbo-container {
     background-image: url("../img/pizza_jumbotron.png");
-    /*background-size: cover;*/
-    /*background-position: center;*/
-    /*color: white;*/
 }
 h1 {
     background-color: lightgrey;
     opacity: 65%;
-    color: black;
 }
 /*this moves it also moves philly*/
 #beef-weird-border {
