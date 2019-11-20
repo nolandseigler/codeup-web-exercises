@@ -18,10 +18,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link btn-light" href="#">Pizza World<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link btn-light active" href="#">Order Online</a>
-                <a class="nav-item nav-link btn-light" href="#">Menu</a>
+            <div class="navbar-nav ml-4">
+                <a class="nav-item nav-link btn-light text-dark ml-4" href="#">Pizza World<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link btn-light" href="#">Order Online</a>
+                <a class="nav-item nav-link btn-light text-dark" href="#">Menu</a>
             </div>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
@@ -36,14 +36,14 @@
 <!--    START BIG CONTAINER-->
 <div class="container">
 <!--    START JUMBO-->
-    <div class="jumbotron jumbotron-fluid text-black" id="jumbo-container">
+    <div class="jumbotron jumbotron-fluid text-black d-sm-none d-md-block d-lg-block d-xl-block" id="jumbo-container">
         <h1 class="display-4 text-center">Welcome to Pizza World!</h1>
     </div>
 <!--    END JUMBO-->
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs" id="pizza-creation-tabs" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="crust-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="crust" aria-selected="true"><span class="badge badge-secondary rounded-pill">1</span> Size and crust</a>
+            <a class="nav-link active" id="crust-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="crust" aria-selected="true"><span class="badge badge-secondary rounded-pill">1</span> Size and Crust</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-conrtols="cheese" aria-selected="false"><span class="badge badge-secondary rounded-pill">2</span> Cheese and Sauce</a>
@@ -56,8 +56,8 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="size-and-crust-tab">
             <div class="card">
-                <div class="card-header">
-                    Choose size and crust
+                <div class="card-header bg-primary text-white">
+                    Choose Size and Crust
                 </div>
                 <div class="card-body">
 <!--                    CARD L2-->
@@ -120,14 +120,14 @@
                 <div class="card-footer text-muted">
 <!--                    THIS MAKES THE BUTTON WORK...SORT OF-->
 <!--                    <a class="nav-link btn btn-primary float-right" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-conrtols="cheese" aria-selected="false">Next Step ></a>-->
-                    <a href="#cheese" class="btn btn-primary float-right">Next Step ></a>
+                    <a href="#cheese" class="btn btn-primary float-right ">Next Step ></a>
                 </div>
             </div>
         </div>
 <!--        START OF SECOND TAB-->
         <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-and-sauce-tab">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-primary text-white">
                     Choose Cheese and Sauce
                 </div>
                 <div class="card-body">
@@ -197,8 +197,8 @@
 <!--        START OF THIRD TAB-->
         <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
             <div class="card">
-                <div class="card-header">
-                    Choose size and crust
+                <div class="card-header bg-primary text-white">
+                    Choose Toppings
                 </div>
                 <div class="card-body">
                     <!--                    CARD L2-->

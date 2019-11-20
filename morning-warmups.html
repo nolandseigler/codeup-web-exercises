@@ -52,6 +52,10 @@
                 return inputArray[inputNumber - 1];
             }
         }
+        const getType = function(input) {
+            let typeOfInput = typeof(input);
+            return typeOfInput
+        }
 
         helloWorld();
         helloName('Bob');
@@ -67,6 +71,11 @@
         console.log(arrayLength(animalsAndNumber));
         console.log(lastItem(animalsAndNumber));
         console.log(nthItem(animalsAndNumber, 27));
+        console.log(getType(animalsAndNumber));
+        console.log(getType('Bob'));
+
+
+
     </script>
 <!--    li.item$*5-->
     <li class="item1"></li>
