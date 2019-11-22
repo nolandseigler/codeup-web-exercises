@@ -6,73 +6,85 @@
     </head>
     <body>
     <script>
-        function helloWorld() {
-            return console.log(`Hello World.`);
-        }
-        function helloName(name) {
-            return console.log(`Hello ${name}.`);
-        }
-        function add(x, y) {
-            let sum = x + y;
-            return sum;
-        }
-        const addFour = function(a, b, c, d) {
-            let result = a + b + c +d;
-            return result;
-        }
-        // function addFour(a, b, c, d) {
+        // function helloWorld() {
+        //     return console.log(`Hello World.`);
+        // }
+        // function helloName(name) {
+        //     return console.log(`Hello ${name}.`);
+        // }
+        // function add(x, y) {
+        //     let sum = x + y;
+        //     return sum;
+        // }
+        // const addFour = function(a, b, c, d) {
         //     let result = a + b + c +d;
         //     return result;
         // }
-        const areaOfRectangle = function(l, w) {
-            let area = l * w;
-            return area;
-        }
-        const areaOfRectangleArrow = (l, w) => {
-            return l * w;
-        }
-        function firstItem(array) {
-            return array[0];
-        }
-        function arrayLength(inputArray) {
-            return inputArray.length;
-        }
-        const lastItem = function (inputArray) {
-            return inputArray[inputArray.length - 1];
-        }
-        const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];
+        // // function addFour(a, b, c, d) {
+        // //     let result = a + b + c +d;
+        // //     return result;
+        // // }
+        // const areaOfRectangle = function(l, w) {
+        //     let area = l * w;
+        //     return area;
+        // }
+        // const areaOfRectangleArrow = (l, w) => {
+        //     return l * w;
+        // }
+        // function firstItem(array) {
+        //     return array[0];
+        // }
+        // function arrayLength(inputArray) {
+        //     return inputArray.length;
+        // }
+        // const lastItem = function (inputArray) {
+        //     return inputArray[inputArray.length - 1];
+        // }
+        // const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];
+        //
+        // const nthItem = function (inputArray, inputNumber) {
+        //     if (inputNumber === 0) {
+        //         return "0th is not an nth.";
+        //     } else if (inputNumber > inputArray.length) {
+        //         return `${inputNumber} is larger than the number of children.`
+        //     }
+        //     else {
+        //         return inputArray[inputNumber - 1];
+        //     }
+        // }
+        // const getType = function(input) {
+        //     let typeOfInput = typeof(input);
+        //     return typeOfInput
+        // }
 
-        const nthItem = function (inputArray, inputNumber) {
-            if (inputNumber === 0) {
-                return "0th is not an nth.";
-            } else if (inputNumber > inputArray.length) {
-                return `${inputNumber} is larger than the number of children.`
-            }
-            else {
-                return inputArray[inputNumber - 1];
-            }
-        }
-        const getType = function(input) {
-            let typeOfInput = typeof(input);
-            return typeOfInput
+
+        let outputArray = [];
+        const putTwo = function(inputArray) {
+            outputArray = inputArray.push(2);
+            return outputArray;
         }
 
-        helloWorld();
-        helloName('Bob');
-        console.log(add(1, 1));
-        console.log(addFour(1, 2, 3, 4));
-        console.log(addFour("1", 2, 3, 4));
-        console.log(addFour(1, 2, 3, "4"));
-        console.log(addFour(add(1, 2), 2, 3, 4));
-        console.log(areaOfRectangle(2, 2));
-        console.log(areaOfRectangleArrow(2, 2));
-        console.log(firstItem([1, 2, 3, 4]));
-        console.log(firstItem(animalsAndNumber));
-        console.log(arrayLength(animalsAndNumber));
-        console.log(lastItem(animalsAndNumber));
-        console.log(nthItem(animalsAndNumber, 27));
-        console.log(getType(animalsAndNumber));
-        console.log(getType('Bob'));
+        // helloWorld();
+        // helloName('Bob');
+        // console.log(add(1, 1));
+        // console.log(addFour(1, 2, 3, 4));
+        // console.log(addFour("1", 2, 3, 4));
+        // console.log(addFour(1, 2, 3, "4"));
+        // console.log(addFour(add(1, 2), 2, 3, 4));
+        // console.log(areaOfRectangle(2, 2));
+        // console.log(areaOfRectangleArrow(2, 2));
+        // console.log(firstItem([1, 2, 3, 4]));
+        // console.log(firstItem(animalsAndNumber));
+        // console.log(arrayLength(animalsAndNumber));
+        // console.log(lastItem(animalsAndNumber));
+        // console.log(nthItem(animalsAndNumber, 27));
+        // console.log(getType(animalsAndNumber));
+        // console.log(getType('Bob'));
+        putTwo([1, 2, 3, 4]);
+
+        for (i = 0; i < outputArray.length; i++) {
+            console.log(outputArray[i]);
+        }
 
 
 
