@@ -58,11 +58,13 @@
         // }
 
 
-        // let outputArray = [];
-        // const putTwo = function(inputArray) {
-        //     outputArray = inputArray.push(2);
-        //     return outputArray;
-        // }
+        let outputArray = [];
+        const putTwo = function (inputArray) {
+            outputArray = inputArray.push(2);
+            console.log(`This is in the function: ${outputArray}.`)
+            return outputArray;
+        }
+        console.log(`This is outside of the function: ${outputArray}.`)
         // const greaterThanTen = function (inputNumber) {
         //     if (inputNumber > 10) {
         //         return true;
@@ -95,13 +97,15 @@
         // console.log(nthItem(animalsAndNumber, 27));
         // console.log(getType(animalsAndNumber));
         // console.log(getType('Bob'));
-        // putTwo([1, 2, 3, 4]);
-        // for (i = 0; i < outputArray.length; i++) {
-        //     console.log(outputArray[i]);
-        // }
-        console.log(greaterThanTen(11));
-        console.log(greaterThanTen(10));
-        console.log(greaterThanTen(9));
+        const numberArray = [1, 2, 3, 4];
+        putTwo(numberArray);
+        console.log(`This is after the function is called: ${outputArray}.`)
+        for (i = 0; i < outputArray.length; i++) {
+            console.log(outputArray[i]);
+        }
+        // console.log(greaterThanTen(11));
+        // console.log(greaterThanTen(10));
+        // console.log(greaterThanTen(9));
 
 
 
