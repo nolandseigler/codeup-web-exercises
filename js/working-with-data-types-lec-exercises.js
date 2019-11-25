@@ -31,7 +31,7 @@ console.log(weeklyPay);
      console.log("An error has occurred.");
  }
  // Probelem 4
-var moreThanTwoItems = true;
+var moreThanTwoItems = false;
 var offerStillValid = true;
 var isPremiumMember = true;
 
@@ -47,13 +47,28 @@ if (moreThanTwoItems && offerStillValid) {
     console.log("An error has occurred.");
 }
 // Exercise 4
-var username = 'codeup';
-var password = 'notastrongpassword';
-var passwordMinLength = false;
-var doesntContainUsername = false;
-var passwordMaxLength = false;
-var passWhiteSpaceTest = false;
+var userUsername = 'codeup ';
+var userPassword = 'notastrongpassword';
+var usernameAndPasswordRequirements = {passwordMinLength: false, doesntContainUsername: false, usernameMaxLength: false, passWhiteSpaceTest: false};
+// console.log(usernameAndPasswordRequirements);
+const accountCreation = function (inputUsername, inputPassword) {
+    if (inputPassword.length >= 5 && inputUsername !== inputPassword && inputUsername.length <= 20 && inputPassword[0] != " "  && inputPassword[inputPassword.length - 1] !== " " && inputUsername[0] !== " " && inputUsername[inputUsername.length - 1] !== " ") {
+        usernameAndPasswordRequirements = {passwordMinLength: true, doesntContainUsername: true, usernameMaxLength: true, passWhiteSpaceTest: true};
+        console.log("Username and password meet minimum requirements.");
+        return usernameAndPasswordRequirements;
+    } else {
+        console.log("Your username must be no more than 20 characters. Passwords must contain 5 or more characters. Ensure that your password is not the same as your username. Passwords and usernames may not start or end with white spaces.");
+    }
+}
 
-var usernameAndPasswordRequirements = {passwordMinLength: true, doesntContainUsername: true, passwordMaxLength: true, passWhiteSpaceTest: true};
-console.log(usernameAndPasswordRequirements);
+accountCreation(userUsername, userPassword);
+
+
+
+
+// console.log(/\s/.test(username));
+// var usernameAndPasswordRequirements = {passwordMinLength: true, doesntContainUsername: true, usernameMaxLength: true, passWhiteSpaceTest: true};
+// console.log(usernameAndPasswordRequirements);
+
+// && inputUsername.indexOf(' ') >= 0 && inputPassword.indexOf(' ') >= 0
 
