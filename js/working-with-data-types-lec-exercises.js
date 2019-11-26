@@ -46,18 +46,28 @@ if (moreThanTwoItems && offerStillValid) {
 } else {
     console.log("An error has occurred.");
 }
+// Problem 4 version b
+var moreThanTwoItemsVb = false;
+var offerStillValidVb = true;
+var isPremiumMemberVb = true;
+
+var discountAvailable = offerStillValidVb && (moreThanTwoItemsVb || isPremiumMemberVb);
+if (discountAvailable) {
+    console.log("Purchase successful.");
+} console.log("Purchase failed.");
+
 // Exercise 4
-var userUsername = 'codeup ';
+var userUsername = 'codeup';
 var userPassword = 'notastrongpassword';
 var usernameAndPasswordRequirements = {passwordMinLength: false, doesntContainUsername: false, usernameMaxLength: false, passWhiteSpaceTest: false};
 // console.log(usernameAndPasswordRequirements);
 const accountCreation = function (inputUsername, inputPassword) {
-    if (inputPassword.length >= 5 && inputUsername !== inputPassword && inputUsername.length <= 20 && inputPassword[0] != " "  && inputPassword[inputPassword.length - 1] !== " " && inputUsername[0] !== " " && inputUsername[inputUsername.length - 1] !== " ") {
+    if (inputPassword.length >= 5 && !inputPassword.includes(inputUsername) && inputUsername.length <= 20 && inputPassword[0] != " "  && inputPassword[inputPassword.length - 1] !== " " && inputUsername[0] !== " " && inputUsername[inputUsername.length - 1] !== " ") {
         usernameAndPasswordRequirements = {passwordMinLength: true, doesntContainUsername: true, usernameMaxLength: true, passWhiteSpaceTest: true};
         console.log("Username and password meet minimum requirements.");
         return usernameAndPasswordRequirements;
     } else {
-        console.log("Your username must be no more than 20 characters. Passwords must contain 5 or more characters. Ensure that your password is not the same as your username. Passwords and usernames may not start or end with white spaces.");
+        console.log("Your username must be no more than 20 characters. Passwords must contain 5 or more characters. Ensure that your password does not include your username. Passwords and usernames may not start or end with white spaces.");
     }
 }
 
