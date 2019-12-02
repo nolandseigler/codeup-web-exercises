@@ -1,4 +1,6 @@
-// "use strict";
+// This is an IIFE: Immediately Invoked Function Expression.
+(function () {
+//  "use strict";
 // console.log("Hello from external JavaScript.");
 // alert("Welcome to my Website!");
 // var userPromptInput = prompt("What is your favorite color?");
@@ -120,3 +122,5 @@ if (userSelectedClass === 'science') {
 // } else {
 //     console.log("An error has occurred.");
 // }
+}) ();
+// ^^^^IIFE ends
