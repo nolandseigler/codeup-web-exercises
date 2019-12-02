@@ -6,6 +6,7 @@
     </head>
     <body>
     <script>
+        "use strict";
         // function helloWorld() {
         //     return console.log(`Hello World.`);
         // }
@@ -75,6 +76,23 @@
         // const greaterThanTen = function (inputNumber) {
         //     return inputNumber > 10;
         // }
+        // const youMayEnter = function (inputNumber) {
+        //     return (inputNumber >= 13) ? "You may enter!" : "Sorry, you need a parent or guardian to enter.";
+        // }
+        const seeYouLater = function (inputString) {
+            if (typeof inputString === "string") {
+                var newString = inputString.toLowerCase();
+                if (newString === "alligator") {
+                    return "See you later alligator!";
+                } else if (newString === "crocodile") {
+                    return "After a while crocodile!";
+                } else {
+                    return "So long";
+                }
+            } else {
+                return "Please input a string."
+            }
+        }
 
 
 
@@ -107,11 +125,11 @@
         // console.log(greaterThanTen(10));
         // console.log(greaterThanTen(9));
 
+        // console.log(youMayEnter(13));
+        console.log(seeYouLater("ALLIGator"));
+        console.log(seeYouLater("Cow"));
 
-        const youMayEnter = function (inputNumber) {
-            return (inputNumber >= 13) ? "You may enter!" : "Sorry, you need a parent or guardian to enter.";
-        }
-        console.log(youMayEnter(13));
+
 
 
 
