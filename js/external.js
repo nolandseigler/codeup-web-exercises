@@ -85,12 +85,26 @@ if (userCurrentClassTimes >= 1) {
 }
 var userSelectedClass = prompt("Would you like to sign up for Science, Math, English, or History class?").toLowerCase();
 // userSelectedClass = (checkForString(userSelectedClass)); prompts are strings need to fix to where it checks for words vs nums.
-if (userSelectedClass === 'science' || userSelectedClass === 'math' || userSelectedClass === 'english' || userSelectedClass === 'history') {
+if (userSelectedClass === 'science') {
     console.log(userSelectedClass);
-    console.log()
-    if (Object.values(userSelectedClass)[3] > 0 && userCurrentClassTimesArray.includes(Object.values(userSelectedClass)[4]) === false) {
-        console.log("You did it.");
+    console.log(Object.values(science)[3]);
+    if (Object.values(science)[3] > 0 && userCurrentClassTimesArray.includes(Object.values(science)[4]) === false) {
+        console.log("Science works");
     }
+} else if (userSelectedClass === "math") {
+    if (Object.values(math)[3] > 0 && userCurrentClassTimesArray.includes(Object.values(math)[4]) === false){
+        console.log("Math works");
+    }
+} else if (userSelectedClass === "english") {
+    if (Object.values(english)[3] > 0 && userCurrentClassTimesArray.includes(Object.values(english)[4]) === false){
+        console.log("English works");
+    }
+} else if (userSelectedClass === "history") {
+    if (Object.values(history)[3] > 0 && userCurrentClassTimesArray.includes(Object.values(history)[4]) === false){
+        console.log("History works");
+    }
+} else {
+    console.log("schedule conflict");
 }
 // var classFull = true;
 // var scheduleConflict = true;
