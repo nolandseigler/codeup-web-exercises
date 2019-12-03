@@ -46,7 +46,16 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-// const isTwo = inputNumber => (typeof inputNumber === "number" ) ? ((inputNumber === 2) ? true : false) : "Please submit a number.";
+
+const isTwo = function (inputNumber) {
+    if (typeof inputNumber === "number") {
+        return (inputNumber === 2 ? true : false);
+    } else {
+        return "Please input a number";
+    }
+}
+isTwo(random);
+// console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
