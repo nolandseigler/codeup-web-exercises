@@ -1,37 +1,74 @@
+(function () {
 "use strict";
 
 console.log("hello from conditionals lec.js!");
 
-// ================ REAL WORLD SCENARIO ================
-// If a user is an admin,show a specific navbar 
-// If weather is rainy, show rain icon
-// If number of lives is 0, game is over
-
-
-// ================ IF STATEMENT SYNTAX ================
-
-// if(condition){
-    // code here runs if condition evaluates to true
+// // ================ REAL WORLD SCENARIO ================
+// // If a user is an admin,show a specific navbar
+// // If weather is rainy, show rain icon
+// // If number of lives is 0, game is over
+//
+//
+// // ================ IF STATEMENT SYNTAX ================
+//
+// // if(condition){
+//     // code here runs if condition evaluates to true
+// // }
+//
+//
+// // ================ IF STATEMENT EXAMPLES ================
+// //TODO Together: Show a specific navbar if user is admin
+// // if (isAdmin) {
+// //     //show admin navbar
+// //     //showAdminNavbar(); <- function
+// // }
+// //TODO Together: Send a 20% off coupon if its users birthday
+// // if (isBirthday) {
+// //     //send 20% discount coupon
+// //     //sendBirthdayEmail(); <-function
+// // }
+// //TODO Together: Write an if statement that alerts "It's raining" if isRainy is true
+// var isRainy = true;
+// if (isRainy) {
+//     //send alert if its raining
+//     alert("It's raining");
 // }
-    
-
-// ================ IF STATEMENT EXAMPLES ================
-//TODO Together: Show a specific navbar if user is admin
-//TODO Together: Send a 20% off coupon if its users birthday
-//TODO Together: Write an if statement that alerts "It's raining" if isRainy is true
-//TODO Together: Write an if statement that alerts the user whether or not they have enough money to buy a new item. Assume there are no hidden fees or taxes.
-
-
-
-//TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
-//TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
-//TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
-
-
-
-
-//TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
-
+// //TODO Together: Write an if statement that alerts the user whether or not they have enough money to buy a new item. Assume there are no hidden fees or taxes.
+// var itemCost = 100;
+// var currentBalance = 200;
+// if (itemCost <= currentBalance) {
+//     alert("You have enough money!");
+// }
+//
+//
+// //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
+// var numberOfLives = 0;
+// const numberOfLivesFunction = function (remainingLives) {
+//     if (remainingLives === 0) {
+//         alert("Sorry, game over");
+//     }
+// }
+// numberOfLivesFunction(numberOfLives);
+// //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
+// var weather = "snowing"
+// const weatherFunction = function (weatherInput){
+//     if (weatherInput === "snowing") {
+//         alert("It's snowing!");
+//     }
+// }
+// weatherFunction(weather);
+// //TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
+// var numberInput = 11;
+// const numberInputFunction = function (inputNumber) {
+//     if (inputNumber > 10) {
+//         alert("True")
+//     }
+// }
+// numberInputFunction(numberInput);
+//
+//
+// //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
+// // Complete.
 
 
 
@@ -48,20 +85,60 @@ console.log("hello from conditionals lec.js!");
 
 // =============== IF / ELSE STATEMENT EXAMPLES ================
 //TODO Together: Show a specific navbar if user is admin, else show a different navbar
+var isAdmin = true;
+if (isAdmin) {
+    //show admin navbar
+    alert("user is an admin");
+} else {
+    //show regular navbar
+    alert("user is a regular user.");
+}
 //TODO Together: Write an if statement that alerts "It's raining" if isRainy is true, else return "have a nice day!"
-
+var isRainy = true;
+if (isRainy) {
+    //send alert if its raining
+    alert("It's raining");
+} else {
+    alert("Have a nice day.");
+}
 
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
+var numberOfLives = 0;
+const checkIfGameIsOver = function (remainingLives) {
+    if (typeof remainingLives === "number" && numberOfLives >= 0) {
+        if (remainingLives === 0) {
+            return "Sorry, game over";
+        } else {
+            return "Next Level!";
+        }
+    }
+}
+checkIfGameIsOver(numberOfLives);
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
+var weather = "snowing"
+const weatherFunction = function (weatherInput){
+    if (weatherInput === "snowing") {
+        alert("It's snowing!");
+    } else {
+        alert("Check back later for more details!");
+    }
+}
+weatherFunction(weather);
 //TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
+var numberInput = 11;
+if (numberInput > 10) {
+    alert("True");
+} else {
+    alert("the number is less than 10");
+}
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
-
+//Complete
 
 
 //TODO: EXTRA BONUS - Refactor todo#2 from above as a function.
-
+//Complete
     
     
 // SHOULD WE DELETE STUFF EXAMPLE
@@ -193,3 +270,4 @@ console.log("hello from conditionals lec.js!");
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
 
+})();
