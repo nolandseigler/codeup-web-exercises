@@ -1,3 +1,4 @@
+(function () {
 "use strict";
 
 /**
@@ -109,3 +110,5 @@ const applyDiscount = function (beforeDiscountPrice, discountPercentage) {
     }
 }
 console.log(applyDiscount(45.99, 0.12));
+
+})();
