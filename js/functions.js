@@ -16,15 +16,16 @@ const sayHello = name => (typeof name === "string" ? "Hello " + name + " ." : "P
  *
  * console.log 'helloMessage' to check your work
  */
-// var helloMessage = sayHello("Noland");
+var helloMessage = sayHello("Noland");
+console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-const myName = "Noland"
-var helloMessage = sayHello(myName);
+const myName = "Noland";
+sayHello(myName);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
@@ -55,7 +56,7 @@ const isTwo = function (inputNumber) {
     }
 }
 isTwo(random);
-// console.log(isTwo(random));
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -67,14 +68,24 @@ isTwo(random);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-
+const calculateTip = function (tipPercentage, billTotal) {
+    if (typeof tipPercentage === "number" && typeof billTotal === "number" && billTotal > 0 && tipPercentage <= 1 && tipPercentage > 0) {
+        return tipPercentage * billTotal;
+    } else {
+       return "Please input the correct numbers for both arguments.";
+    }
+}
+// console.log(calculateTip(0.20, 20));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+var patronTotal = parseFloat(prompt("How much is your total bill? (omit the $ sign and include to the hundredths decimal place)"));
+var patronTip = parseFloat(prompt("How much will you be tipping? (input your tip percentage as a decimal to the hundredths place. Example: 0.20 for 20%."));
+var finalTip = (calculateTip(patronTip, patronTotal));
+alert("Your tip amount based on the input you provided: $" + finalTip + ".");
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -89,3 +100,12 @@ isTwo(random);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+const applyDiscount = function (beforeDiscountPrice, discountPercentage) {
+    if (typeof beforeDiscountPrice === "number" && typeof discountPercentage === "number" && beforeDiscountPrice > 0 && discountPercentage <= 1 && discountPercentage > 0) {
+        var discount = beforeDiscountPrice * discountPercentage;
+        return beforeDiscountPrice - discount;
+    } else {
+        return "Please input the correct numbers for both arguments.";
+    }
+}
+console.log(applyDiscount(45.99, 0.12));
