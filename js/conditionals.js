@@ -22,7 +22,7 @@ if (isEnterNumber) {
     const numberDetailsFunction = function (userEnteredNumber) {
         if (!isNaN(userEnteredNumber)) {
             var evenOrOdd = (userEnteredNumber % 2 === 0 ? "Your input is even." : "Your input is odd");
-            alert(evenOrOdd);
+            alert (evenOrOdd);
             var plusOneHundred = userEnteredNumber + 100;
             alert("Your number plus 100 is: " + plusOneHundred + ".");
             var positiveOrNegative = (Math.sign(userEnteredNumber) !== -1 ? "Your input is positive" : "Your input is negative.");
@@ -56,7 +56,25 @@ if (isEnterNumber) {
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
+const analyzeColor = function (inputColor) {
+    if (typeof inputColor === "string" && isNaN(inputColor)) {
+        inputColor.toLowerCase();
+        if (inputColor === "blue") {
+            return "Blue is the color of the sky.";
+        } else if (inputColor === "red") {
+            return "Strawberries are red.";
+        } else if (inputColor === "cyan") {
+            return "I don't know anything about cyan.";
+        } else {
+            return "That color is not available at this time. Available colors: Blue, Red, Cyan.";
+        }
+    } else {
+        return "Please input a color name. (No numbers or special characters.)";
+    }
+}
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("cat"));
+// console.log(analyzeColor(3));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -69,18 +87,41 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-
+const analyzeColorSwitch = function (inputColor) {
+    if (typeof inputColor === "string" && isNaN(inputColor)) {
+        inputColor.toLowerCase();
+        switch (inputColor) {
+            case "blue":
+                return "Blue is the color of the sky.";
+                break;
+            case "red":
+                return "Strawberries are red.";
+                break;
+            case "cyan":
+                return "I don't know anything about cyan.";
+                break;
+            default:
+                return "That color is not available at this time. Available colors: Blue, Red, Cyan.";
+                break;
+        }
+    } else {
+        return "Please input a color name. (No numbers or special characters.)";
+    }
+}
+// console.log(analyzeColorSwitch(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+var userColorChoice = prompt("Please choose input your favorite color from the rainbow.");
+alert((analyzeColorSwitch(userColorChoice)));
 
 /* ########################################################################## */
 
@@ -103,6 +144,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+var walmartPromotionNumber = Math.floor(Math.random() * 5);
+// console.log(walmartPromotionNumber);
+const discountPromotion = function (inputLuckyNumber, prediscountTotal) {
+    var discountValue;
+    switch (inputLuckyNumber) {
+        case 0:
+            discountValue = 0;
+            break;
+        case 1:
+            discountValue = .10;
+            break;
+        case 2:
+            discountValue = .25;
+            break;
+        case 3:
+            discountValue = .35;
+            break;
+        case 4:
+            discountValue = .50;
+            break;
+        case 5:
+            discountValue = 1;
+            break;
+        default:
+            console.log("An error has occurred in the promotion switch.");
+    }
+var discount = discountValue * prediscountTotal;
+var postDiscountTotal = prediscountTotal - discount;
+return postDiscountTotal;
+}
+// console.log(discountPromotion(walmartPromotionNumber, 100));
 
 /**
  * TODO:
@@ -112,7 +184,38 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
-
+var luckyNumber = Math.floor(Math.random() * 6);
+    const luckyNumberPromotion = function (inputLuckyNumber, prediscountTotal) {
+        var discountValue;
+        switch (inputLuckyNumber) {
+            case 0:
+                discountValue = 0;
+                break;
+            case 1:
+                discountValue = .10;
+                break;
+            case 2:
+                discountValue = .25;
+                break;
+            case 3:
+                discountValue = .35;
+                break;
+            case 4:
+                discountValue = .50;
+                break;
+            case 5:
+                discountValue = 1;
+                break;
+            default:
+                console.log("An error has occurred in the promotion switch.");
+        }
+        var discount = discountValue * prediscountTotal;
+        var postDiscountTotal = prediscountTotal - discount;
+        return postDiscountTotal;
+    }
+var userTotalBill = parseInt(prompt("What is your total bill?"));
+var finalPrice = luckyNumberPromotion(luckyNumber, userTotalBill);
+alert("Your lucky number is: " + luckyNumber + ".") ;
+alert("Your price before discount was: " + userTotalBill + ".");
+alert("Your price after discount is: " + finalPrice + ".");
 })();

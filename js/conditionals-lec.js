@@ -271,7 +271,7 @@ if (userAge < 15) {
 
 //TODO: Refactor the following conditional as a ternary
 
-// var weather = "sunny";
+var weather = "sunny";
 // var weatherMessage;
 
 // if(weather === "rainy"){
@@ -281,7 +281,7 @@ if (userAge < 15) {
 // }
 
 //WRITE YOUR TERNARY STATEMENT HERE!
-
+var weatherMessage = (weather === "rainy") ? "It's raining!" : "Have a nice day!";
 
 
 // =============== SWITCH STATEMENT ================
