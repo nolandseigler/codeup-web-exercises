@@ -79,20 +79,28 @@
         // const youMayEnter = function (inputNumber) {
         //     return (inputNumber >= 13) ? "You may enter!" : "Sorry, you need a parent or guardian to enter.";
         // }
-        const seeYouLater = function (inputString) {
-            if (typeof inputString === "string") {
-                var newString = inputString.toLowerCase();
-                if (newString === "alligator") {
-                    return "See you later alligator!";
-                } else if (newString === "crocodile") {
-                    return "After a while crocodile!";
-                } else {
-                    return "So long";
-                }
-            } else {
-                return "Please input a string."
-            }
+        // const seeYouLater = function (inputString) {
+        //     if (typeof inputString === "string") {
+        //         var newString = inputString.toLowerCase();
+        //         if (newString === "alligator") {
+        //             return "See you later alligator!";
+        //         } else if (newString === "crocodile") {
+        //             return "After a while crocodile!";
+        //         } else {
+        //             return "So long";
+        //         }
+        //     } else {
+        //         return "Please input a string."
+        //     }
+        // }
+        const functionA(callbackFunction) {
+            callbackFunction()
         }
+        functionA(function (){
+            alert("It works!");
+        })
+
+
 
 
 
