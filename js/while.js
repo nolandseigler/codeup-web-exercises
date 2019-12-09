@@ -1,5 +1,5 @@
-(function () {
-"use strict"
+// (function () {
+// "use strict"
 // // //while loop number 1
 // // var i = 1
 // // while (i < 65536) {
@@ -36,6 +36,21 @@
 //     }
 //
 // } while (currentCones > 0);
-
-
-})();
+//     this does not work
+// var allCones = Math.floor(Math.random() * 50) + 50;
+// do {
+//     var conesUsersPurchased = Math.floor(Math.random() * 5) + 1;
+//     if (conesUsersPurchased > allCones) {
+//         //can't sell
+//         var sadMessage = `Cannot sell you ${conesUsersPurchased}. I only have ${allCones}.`;
+//         console.log(sadMessage);
+//     } else {
+//         //can't sell
+//         allCones = allCones - conesUsersPurchased;
+//         var happyMessage = `${conesUsersPurchased} cones sold. ${allCones} Cones to go.`;
+//         console.log(happyMessage);
+//     }
+// } while (allCones < 0);
+// console.log(`Yay! All cones sold.`);
+//
+// })();
