@@ -93,13 +93,24 @@
         //         return "Please input a string."
         //     }
         // }
-        const functionA(callbackFunction) {
-            callbackFunction()
+        // const functionA(callbackFunction) {
+        //     callbackFunction()
+        // }
+        // functionA(function (){
+        //     alert("It works!");
+        // })
+const contains = function (arr, param) {
+    return arr.includes(param);
+}
+const containsLoopMethod = function (arr, param) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === param) {
+            return true
         }
-        functionA(function (){
-            alert("It works!");
-        })
-
+    } return false;
+}
+console.log(contains([1, "cat", false, "6"], "cat"));
+console.log(containsLoopMethod([1, "cat", false, "6"], "dog"));
 
 
 
@@ -134,8 +145,8 @@
         // console.log(greaterThanTen(9));
 
         // console.log(youMayEnter(13));
-        console.log(seeYouLater("ALLIGator"));
-        console.log(seeYouLater("Cow"));
+        // console.log(seeYouLater("ALLIGator"));
+        // console.log(seeYouLater("Cow"));
 
 
 
