@@ -60,7 +60,7 @@ var objects = [
         play: function (toy) {
             return `${this.name} plays with a ${toy}`
         }
-    },
+    }
 ]
 objects.forEach(object => console.log(object.name));
 console.log(objects[2].play("bone"));
