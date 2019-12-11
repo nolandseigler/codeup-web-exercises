@@ -35,6 +35,6 @@ const arrayToUl = function(inputArr) {
     return inputArr.join(' ');
 }
 
-var ulPlanets = arrayToUl(planetsArray);
-document.getElementById("planets").innerHTML = ulPlanets
+
+document.getElementById("planets").innerHTML = arrayToUl(planetsArray);
 })();
