@@ -11,7 +11,10 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+// const person = {
+//     firstName: "Noland",
+//     lastName: "Seigler"
+//     }
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +24,14 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    const person = {
+        firstName: "Noland",
+        lastName: "Seigler",
+        sayHello: function() {
+            return `Hello from ${this.firstName} ${this.lastName}!`
+        }
+    }
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +46,26 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    const shopAtHeb = function () {
+        shoppers.forEach(function (shopper) {
+            if (shopper.amount > 200) {
+                var discountPrice = shopper.amount - (shopper.amount * .12);
+                var message = console.log(`${shopper.name}'s original price: ${shopper.amount}. ${shopper.name}'s final price: ${discountPrice}`);
+            } else {
+                var message = console.log(`${shopper.name}'s price: ${shopper.amount}.`);
+            }
+            return message;
+        })
+    }
+    console.log(shopAtHeb());
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,7 +79,42 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+// var books = [
+        // {title: "Book1",
+        //  author: {
+        //     firstName: "Bob",
+        //     lastName: "Saggett"
+        //  }
+        // },
+        // {title: "Book2",
+        //     author: {
+        //         firstName: "Jeff",
+        //         lastName: "Saggett"
+        //     }
+        // },
+        // {title: "Book3",
+        //     author: {
+        //         firstName: "Nancy",
+        //         lastName: "Saggett"
+        //     }
+        // },
+        // {title: "Book4",
+        //     author: {
+        //         firstName: "Susan",
+        //         lastName: "Saggett"
+        //     }
+        // },
+        // {title: "Book5",
+        //     author: {
+        //         firstName: "Leeroy",
+        //         lastName: "Saggett"
+        //     }
+        // }
+    // ]
+    // console.log(books[0].author.firstName);
+    // console.log(books[1].author.firstName);
+    // console.log(books[2].author.firstName);
+    // console.log(books[3].author.firstName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -79,7 +139,16 @@
      *      ---
      *      ...
      */
-
+// const bookLoop = function(arr) {
+//
+//     arr.forEach(function(element, i) {
+//        console.log(`Book # ${i}`);
+//        console.log(`Title: ${element.title}`);
+//        console.log(`Author: ${element.author.firstName} ${element.author.lastName}`);
+//        console.log(`---`);
+//     })
+// }
+// bookLoop(books);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +159,43 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+const createBooksList = function () {
+    var booksList = [];
+    var isAddBook = confirm("Would you like to add a book to Books List?");
+        while(isAddBook) {
+            let book = createBook(prompt("Title"), prompt( "Author"));
+            booksList.push(book);
+            isAddBook = confirm("Would you like to add another book to Books List?");
+        }
+      return booksList;
+    }
+const createBook = function (title, author){
+    var splitAuthor = author.split(' ');
+    let book = {title: title,
+            author: {
+                firstName: splitAuthor[0],
+                lastName: splitAuthor[1]
+            }
+        }
+    return book;
+    }
+const showBookInfo = function (book) {
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+}
 
+const bookLoopBonus = function(arr) {
+     arr.forEach(function(element, i) {
+            console.log(`Book # ${i + 1}`);
+            showBookInfo(element);
+            console.log(`---`);
+        })
+}
+    let book6 = createBook("Yeehaw", "Mike", "Jones");
+    let book7 = createBook("Cowboy", "Michael Scott");
+
+// showBookInfo(book6);
+// showBookInfo(book6);
+let books = createBooksList();
+bookLoopBonus(books);
 })();
