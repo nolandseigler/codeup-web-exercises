@@ -79,6 +79,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+//THE PROMPTS THAT POP UP ON THE PAGE CREATE ALL OF THIS NOW. IT IS PART OF THE BONUS.
 // var books = [
         // {title: "Book1",
         //  author: {
@@ -196,6 +197,27 @@ const bookLoopBonus = function(arr) {
 
 // showBookInfo(book6);
 // showBookInfo(book6);
-let books = createBooksList();
+    const createBooksList = function () {
+        var booksList = [];
+        var isAddBook = confirm("Would you like to add a book to Books List?");
+        while(isAddBook) {
+            let book = createBook(prompt("Title"), prompt( "Author"));
+            booksList.push(book);
+            isAddBook = confirm("Would you like to add another book to Books List?");
+        }
+        return booksList;
+    }
+    const createBook = function (title, author){
+        var splitAuthor = author.split(' ');
+        let book = {title: title,
+            author: {
+                firstName: splitAuthor[0],
+                lastName: splitAuthor[1]
+            }
+        }
+        return book;
+    }
+    let books = createBooksList();
+
 bookLoopBonus(books);
 })();
