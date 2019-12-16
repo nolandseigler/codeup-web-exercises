@@ -1,22 +1,46 @@
 // 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
-const filterNumbers = function (inputArr) {
-    var newArr = [];
-    var badArr = [];
-    inputArr.forEach( element => {
-        typeof element === "number" ? newArr.push(element) : badArr.push(element);
-        console.log(newArr);
-        return newArr
-    });
-    var sortedArr = newArr.sort();
-    console.log(sortedArr);
-}
-filterNumbers(["fred", true, 34, 31, 11, 69, 45, "32", "10"]);
+// const filterNumbers = function (inputArr) {
+//     var newArr = [];
+//     var badArr = [];
+//     inputArr.forEach( element => {
+//         typeof element === "number" ? newArr.push(element) : badArr.push(element);
+//         console.log(newArr);
+//         return newArr
+//     });
+//     var sortedArr = newArr.sort();
+//     console.log(sortedArr);
+// }
+// filterNumbers(["fred", true, 34, 31, 11, 69, 45, "32", "10"]);
 //     ```js
 //         filterNumbers(["fred", true, 5, 3]) //[3, 5]
 //     ```
 //
 // 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
 //
+const getOlder = function (inputArr) {
+    inputArr.forEach( element => {
+        element.age += 1;
+        return inputArr;
+    })
+    return inputArr
+}
+console.log(getOlder([
+    {
+        name: "Chompers",
+        breed: "Pug",
+        age: 7
+    },
+    {
+        name: "Freddy",
+        breed: "Lab",
+        age: 4
+    },
+    {
+        name: "Mr. Pig",
+        breed: "Mastif",
+        age: 10
+    }
+]));
 //     ```js
 //     //Example Input:
 //
