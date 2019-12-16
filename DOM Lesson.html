@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM LESSON</title>
+</head>
+<body>
+<h1 id="header">Happy Holidays</h1>
+<h3>Wish List</h3>
+<ul>
+<!--    <li class="odd">Great Career</li>-->
+<!--    <li class="even">2 Front Teeth</li>-->
+<!--    <li class="odd">Oculus Quest</li>-->
+<!--    <li class="even">Nintendo Switch</li>-->
+<!--    <li class="odd">MacBook Pro 16-inch</li>-->
+<!--    <li class="even">Valve Index</li>-->
+</ul>
+
+<footer class="references">
+    <ol class="footer">
+        <li class="links" id="link1"></li>
+        <li class="links" id="link2"></li>
+        <li class="links" id="link3"></li>
+        <li class="links" id="link4"></li>
+        <li class="links" id="link5"></li>
+    </ol>
+</footer>
+<script>
+    //THIS LESSON IS NOT COMPLETE. PULL DOWN LECTURE ONCE DANIEL IS DONE.....
+    //the document is the hmtl but in js. like the way js sees it.
+    // console.log(document);
+    //all Ids must be unique. getElementById only works on......Ids
+    var header = document.getElementById("header");
+    // console.log(header);
+    var thingsIWant = ["Great Career", "Oculus Quest", "Nintendo Switch", "2 Front Teeth", "MacBook Pro 16-Inch", "Valve Index"];
+
+    // console.log("evens:"+evens);
+    var wishList = document.getElementById("wishList");
+    var htmlString ="";
+    for (var i = 0; i < thingsIWant.length; i++) {
+        if (i % 2 !== 0) {
+            htmlString += "<li class='even'>" + thingsIWant[i] + "</li>";
+        } else {
+            htmlString += "<li class='odd'>" + thingsIWant[i] + "</li>";
+        }
+    }
+    wishList.innerHTML = htmlString;
+    var evens = document.getElementsByClassName("even");
+    for (var i = 0; i < evens.length; i++) {
+        console.log(evens[i]);
+        evens[i].innerHTML = "I changed this to by using 'evens[i].innerHTML'";
+        console.log(evens[i]);
+    }
+
+
+    // var lis = document.getElementsByTagName("li");
+    // var ols = document.getElementsByTagName("ol");
+    // var link3 = document.getElementById("link3");
+    // var links = document.getElementsByClassName("links");
+    // console.log(lis);
+    // console.log(ols);
+    // console.log(link3);
+    // console.log(links);
+</script>
+</body>
+</html>
