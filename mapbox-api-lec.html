@@ -17,22 +17,32 @@
 <body>
 
 <h1>My First Mapbox Map!</h1>
+<!--<button id="btn1">Standard</button>-->
+<!--<button id="btn2">Dark Mode</button>-->
+<!--<button id="btn3">Satellite</button>-->
+<!--<button id="btn4">Codeup</button>-->
+<!--<button id="btn5">Geekdom</button>-->
+<!--<button id="btn6">Zoom In</button>-->
+<!--<button id="btn7">Zoom Out</button>-->
+
+
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-
-<!-- Custom JS -->
-<script>
-    mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-</script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-lec.js"></script>
+<!--&lt;!&ndash; Custom JS &ndash;&gt;-->
+<!--<script>-->
+<!--    mapboxgl.accessToken = mapboxToken;-->
+<!--    var map = new mapboxgl.Map({-->
+<!--        container: 'map',-->
+<!--        style: 'mapbox://styles/mapbox/streets-v9',-->
+<!--        zoom: 10,-->
+<!--        center: [-98.4916, 29.4252]-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
