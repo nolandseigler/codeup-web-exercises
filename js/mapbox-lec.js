@@ -11,7 +11,7 @@
 // Zoom levels range from 0 up to 24, with 0 being a global view and 24 being the most detailed at street level (the max zoom level depends on the location).
 
 //TODO TOGETHER: Set map to san antonio area using the coordinates [-98.4916, 29.4252]
-mapboxgl.accessToken = mapboxToken;
+// mapboxgl.accessToken = mapboxToken;
 // var map = new mapboxgl.Map({
 //     container: 'map',
 //     style: 'mapbox://styles/mapbox/streets-v9',
@@ -21,13 +21,14 @@ mapboxgl.accessToken = mapboxToken;
 
 
 //TODO: Experiment with different map styles, zoom levels, and centers. You will need to reference the mapbox docs. (~15 minutes)
-var mapOptions = {
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10,
-    center: [-98.4916, 29.4252]
-};
-var map = new mapboxgl.Map(mapOptions);
+// mapboxgl.accessToken = mapboxToken;
+// var mapOptions = {
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v9',
+//     zoom: 10,
+//     center: [-98.4916, 29.4252]
+// };
+// var map = new mapboxgl.Map(mapOptions);
 // var marker = new mapboxgl.Marker()
 //     .setLngLat([-98.4916, 29.4252])
 //     .addTo(map);
@@ -58,14 +59,14 @@ var map = new mapboxgl.Map(mapOptions);
 
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-98.4916, 29.4260]. This marker will mark the Alamo on our map.
 // TODO TOGETHER: Change the color of the marker
-var markerOptions = {
-    color: "ff0000",
-    draggable: true
-}
-var marker = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-98.489615, 29.4252])
-    .addTo(map);
-console.log(marker.getLngLat());
+// var markerOptions = {
+//     color: "ff0000",
+//     draggable: true
+// }
+// var marker = new mapboxgl.Marker(markerOptions)
+//     .setLngLat([-98.489615, 29.4252])
+//     .addTo(map);
+// console.log(marker.getLngLat());
 
 
 
@@ -86,10 +87,10 @@ console.log(marker.getLngLat());
 //     .setLngLat([-98.489615, 29.426827])
 //     .setHTML("<p>Codeup Rocks!</p>")
 //     .addTo(map)
-var alamoPopup = new mapboxgl.Popup()
-    .setHTML("<p>Remember The Alamo!</p>")
-    .addTo(map)
-marker.setPopup(alamoPopup);
+// var alamoPopup = new mapboxgl.Popup()
+//     .setHTML("<p>Remember The Alamo!</p>")
+//     .addTo(map)
+// marker.setPopup(alamoPopup);
 // TODO: Review the popup docs. What are some additional options we can pass to the popup?
 // TODO: Try setting the text by using ".setText()" instead of ".setHTML()"
 
@@ -102,7 +103,32 @@ marker.setPopup(alamoPopup);
 
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
-
+mapboxgl.accessToken = mapboxToken;
+var mapOptions = {
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-98.4916, 29.4252]
+};
+var map = new mapboxgl.Map(mapOptions);
+geocode("The White House", mapboxToken).then(result => {
+    console.log(result);
+    //recenter the map
+    map.setCenter(result);
+    map.setZoom(15);
+    //add a marker
+    var markerOptions = {
+    color: "ff0000",
+    draggable: true
+}
+    var marker = new mapboxgl.Marker(markerOptions)
+    .setLngLat(result)
+    .addTo(map);
+    var popup = new mapboxgl.Popup()
+        .setHTML('Found Location')
+        .addTo(map);
+    marker.setPopup(popup);
+});
 
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
