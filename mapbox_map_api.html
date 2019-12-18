@@ -12,6 +12,10 @@
             width: 100%;
             height: 700px;
         }
+        img {
+            width: 200px;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -19,6 +23,19 @@
 <h1>My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
+<button id="btn1">Standard</button>
+<button id="btn2">Dark Mode</button>
+<button id="btn3">Satellite</button>
+<button id="btn4">Codeup</button>
+<button id="btn5">Red's Ice House</button>
+<select id="zoom-select">
+    <option id="option1" value="5">Zoom 5</option>
+    <option id="option2" value="10">Zoom 10</option>
+    <option id="option3" value="15">Zoom 15</option>
+    <option id="option4" value="20">Zoom 20</option>
+</select>
+<button id="btn6">Reset</button>
+<!--<button id="btn7">Zoom Out</button>-->
 <div id='map'></div>
 
 <!-- Mapbox JS -->
@@ -26,16 +43,5 @@
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/mapbox_map_api.js"></script>
-
-<!-- Custom JS -->
-<script>
-    mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-</script>
 </body>
 </html>
