@@ -235,31 +235,31 @@
 //
 //REMEMBER THIS IT IS IMPORTANT
 //TODO: REMEMBER THIS AND STOP FORGETTING HOW TO TODO IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const makeSandwichObjects = (breadInput, fillingInput) => {
-    var sandwichObjectsArray = [];
-    for (var i = 0; i < breadInput.length; i++) {
-        var sandwich = {
-            bread: breadInput[i],
-            filling: fillingInput[i]
-        }
-        sandwichObjectsArray.push(sandwich);
-    }
-    return sandwichObjectsArray;
-}
-var breads  = [
-    "white",
-    "wheat",
-    "rhy",
-    "white"
-];
-
-var fillings = [
-    "pb&j",
-    "ham",
-    "cheese steak",
-    "tuna"
-];
-console.log(makeSandwichObjects(breads, fillings));
+// const makeSandwichObjects = (breadInput, fillingInput) => {
+//     var sandwichObjectsArray = [];
+//     for (var i = 0; i < breadInput.length; i++) {
+//         var sandwich = {
+//             bread: breadInput[i],
+//             filling: fillingInput[i]
+//         }
+//         sandwichObjectsArray.push(sandwich);
+//     }
+//     return sandwichObjectsArray;
+// }
+// var breads  = [
+//     "white",
+//     "wheat",
+//     "rhy",
+//     "white"
+// ];
+//
+// var fillings = [
+//     "pb&j",
+//     "ham",
+//     "cheese steak",
+//     "tuna"
+// ];
+// console.log(makeSandwichObjects(breads, fillings));
 //     ```js
 //         //     Example Input:
 //
@@ -300,4 +300,16 @@ console.log(makeSandwichObjects(breads, fillings));
 //              }
 //          ]
 //
-//     ```
+//
+const keepYellow = inputArr => {
+    var yellowArr = [];
+    var badArr = [];
+    inputArr.forEach(element => {
+        element === "yellow" ? yellowArr.push(element) : badArr.push(element);
+    });
+    return yellowArr;
+};
+console.log(keepYellow(["yellow", "red", "blue", "yellow", "black", "brown", "yellow"]));
+
+
+//   ```
