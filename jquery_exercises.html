@@ -25,7 +25,7 @@
     <li class="resolution">Continue to Grow as a Developer</li>
     <li class="resolution">Do one 'great' project a month</li>
 </ul>
-<p1>This is going to be a great year.</p1>
+<p>This is going to be a great year.</p>
 <div id="div1"></div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -36,17 +36,17 @@
             //our jQuery code goes here
             // alert('Look, we are using jQuery');
             //both are the jQuery Object. this is just an example.
-            console.log($);
-            console.log(jQuery);
+            // console.log($);
+            // console.log(jQuery);
             //
             // $('#button').click(() => {
             //     alert('You clicked the button');
             // });
             // $('.resolution').addClass('green-font');
-            $('.resolution').attr('id', (i) => {
-                // console.log(i);
-                return 'resolution' + (i + 1);
-            });
+            // $('.resolution').attr('id', (i) => {
+            //     // console.log(i);
+            //     return 'resolution' + (i + 1);
+            // });
             // setTimeout(() => {
             //     $('.green-font').addClass('yellow-background');;
             // }, 3000);
@@ -59,21 +59,38 @@
             //         return 'odd';
             //     };
             // };
-            $('.resolution').attr('class', ((i) => {
-                if (i % 2 === 0) {
-                    return 'even';
-                } else {
-                    return 'odd';
-                };
-            })).addClass('resolution');
+            // $('.resolution').attr('class', ((i) => {
+            //     if (i % 2 === 0) {
+            //         return 'even';
+            //     } else {
+            //         return 'odd';
+            //     };
+            // })).addClass('resolution');
             // $('.codeup').addClass('sanAntonio');
             // $('.codeup').css('border', 'solid 1px red');
             //part three
-            $('li').css('font-size', '20px').css('color', 'green').css('background-color', 'orange');
-            $('h1, p, #resolutions').css('color', 'green');
-            setInterval(() => {
-                $('li').addClass('test');
-            }, 4000);
+            // $('li').css('font-size', '20px').css('color', 'green').css('background-color', 'orange');
+            // $('h1, p, #resolutions').css('color', 'green');
+            // setInterval(() => {
+            //     $('li').addClass('test');
+            // }, 4000);
+
+            //SELECTORS
+
+            $('h1').click(function(){
+               $(this).css('background-color', 'green');
+            });
+            $('p').dblclick(function(){
+               $(this).css('font-size', '18px')
+            });
+            $('li').hover(
+                function() {
+                    $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', 'black')
+                }
+            );
         });
     }) ();
 </script>
