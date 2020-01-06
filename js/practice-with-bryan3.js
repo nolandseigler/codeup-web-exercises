@@ -133,7 +133,7 @@ const makeObj = inputStr => {
         numAsandBs: AsAndBs(inputStr)
     }
     return obj;
-}
+};
 console.log(makeObj(testStr));
 
 
