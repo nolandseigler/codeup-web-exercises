@@ -18,8 +18,8 @@
 <body>
 <h1>jQuery</h1>
 <h2>Happy New Year</h2>
-<h3>Resolutions</h3>
-<ul id="resolutions">
+<h3 id="resolutions">Resolutions</h3>
+<ul>
     <li class="resolution">Stay Healthy</li>
     <li class="resolution">Stay Happy</li>
     <li class="resolution">Continue to Grow as a Developer</li>
@@ -70,8 +70,10 @@
             // $('.codeup').css('border', 'solid 1px red');
             //part three
             $('li').css('font-size', '20px').css('color', 'green').css('background-color', 'orange');
-            $('h1').css('color', 'green');
-            $('p1').css('color', 'green');
+            $('h1, p, #resolutions').css('color', 'green');
+            setInterval(() => {
+                $('li').addClass('test');
+            }, 4000);
         });
     }) ();
 </script>
