@@ -6,9 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .green-font {
+            color: green;
+        }
+        .yellow-background {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <h1>jQuery</h1>
+<h2>Happy New Year</h2>
+<h3>Resolutions</h3>
+<ul id="resolutions">
+    <li class="resolution">Stay Healthy</li>
+    <li class="resolution">Stay Happy</li>
+    <li class="resolution">Continue to Grow as a Developer</li>
+    <li class="resolution">Do one 'great' project a month</li>
+</ul>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
@@ -16,7 +32,19 @@
         'use strict';
         $(document).ready(() => {
             //our jQuery code goes here
-            alert('Look, we are using jQuery');
+            // alert('Look, we are using jQuery');
+            //both are the jQuery Object. this is just an example.
+            console.log($);
+            console.log(jQuery);
+            //
+            $('#button').click(() => {
+                alert('You clicked the button');
+            });
+            $('.resolution').addClass('green-font');
+
+            setTimeout(() => {
+                $('.green-font').addClass('yellow-background');;
+            }, 3000);
         });
     }) ();
 </script>
