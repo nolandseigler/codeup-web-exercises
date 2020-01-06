@@ -25,6 +25,8 @@
     <li class="resolution">Continue to Grow as a Developer</li>
     <li class="resolution">Do one 'great' project a month</li>
 </ul>
+<p1>This is going to be a great year.</p1>
+<div id="div1"></div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
@@ -37,14 +39,39 @@
             console.log($);
             console.log(jQuery);
             //
-            $('#button').click(() => {
-                alert('You clicked the button');
+            // $('#button').click(() => {
+            //     alert('You clicked the button');
+            // });
+            // $('.resolution').addClass('green-font');
+            $('.resolution').attr('id', (i) => {
+                // console.log(i);
+                return 'resolution' + (i + 1);
             });
-            $('.resolution').addClass('green-font');
-
-            setTimeout(() => {
-                $('.green-font').addClass('yellow-background');;
-            }, 3000);
+            // setTimeout(() => {
+            //     $('.green-font').addClass('yellow-background');;
+            // }, 3000);
+            // alert($('#resolution2').html());
+            // //part two
+            // const evenOrOdd = (i) => {
+            //     if (i % 2 === 0) {
+            //         return 'even';
+            //     } else {
+            //         return 'odd';
+            //     };
+            // };
+            $('.resolution').attr('class', ((i) => {
+                if (i % 2 === 0) {
+                    return 'even';
+                } else {
+                    return 'odd';
+                };
+            })).addClass('resolution');
+            // $('.codeup').addClass('sanAntonio');
+            // $('.codeup').css('border', 'solid 1px red');
+            //part three
+            $('li').css('font-size', '20px').css('color', 'green').css('background-color', 'orange');
+            $('h1').css('color', 'green');
+            $('p1').css('color', 'green');
         });
     }) ();
 </script>
