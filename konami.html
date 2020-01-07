@@ -8,8 +8,18 @@
             top: -50%;
             left: -50%;
             width: 200%;
-            height: 200%;
+            height: 190%;
         }
+        /*#background-img {*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    right: 0;*/
+        /*    bottom: 0;*/
+        /*    margin: auto;*/
+        /*    min-width: 50%;*/
+        /*    min-height: 50%;*/
+        /*}*/
         #background-img {
             position: absolute;
             top: 0;
@@ -17,6 +27,8 @@
             right: 0;
             bottom: 0;
             margin: auto;
+            width: 50%;
+            height: 80%;
         }
     </style>
 </head>
@@ -29,41 +41,44 @@
     (() => {
         'use strict';
         $(document).ready(() => {
-            $('#background-div').html('<img src="img/gradius.png" id="background-img" alt="">');
+            $('#background-div').html('<img src="https://media.giphy.com/media/13ki5hgynlBaFy/giphy.gif" id="background-img" alt="">');
             let cheatArr = [];
             let inputStr;
             let audioElement = document.createElement('audio');
-            audioElement.setAttribute('src', 'audio/toss-a-coin-to-your-witcher.mp3' );
             const clear = () => {
                 cheatArr = [];
                 inputStr = '';
             };
             const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
             const konamiCodeStr = konamiCode.join('');
+            const witcher = ['12', '20', '19'];
+            const witcherStr = witcher.join('');
             const jenny = ['8', '6', '7', '5','3', '0', '9'];
             const jennyStr = jenny.join('');
-            const lostNumbers = ['4', '8', '15', '16', '23', '42'];
-            const lostNumbersStr = lostNumbers.join('');
             $(document).keyup(function(event){
                cheatArr.push(event.key);
                inputStr = cheatArr.join('');
                console.log(cheatArr);
                console.log(konamiCodeStr);
                if (inputStr === konamiCodeStr) {
-                        $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
-                        audioElement.play();
-                        clear();
+                   $('#background-div').html('<img src="https://media.giphy.com/media/RyXVu4ZW454IM/giphy.gif" id="background-img" alt="">')
+                   //update this
+                   alert('You have added 30 lives');
+                   audioElement.setAttribute('src', 'audio/toss-a-coin-to-your-witcher.mp3' );
+                   audioElement.play();
+                   clear();
                }
-                if (inputStr === jennyStr) {
-                    $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
-                    audioElement.setAttribute('src', 'audio/jenny1.mp3' );
+                if (inputStr === witcherStr) {
+                    $('#background-div').html('<img src="https://media.giphy.com/media/THCnhJPopHF2o9Cdeb/giphy.gif" id="background-img" alt="">')
+                    audioElement.setAttribute('src', 'audio/toss-a-coin-to-your-witcher.mp3' );
                     audioElement.play();
                     clear();
                 }
-                if (inputStr === lostNumbersStr) {
-                    $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
+                if (inputStr === jennyStr) {
+                    $('#background-div').html('<img src="https://media.giphy.com/media/C8w17YzLPddle/giphy.gif" id="background-img" alt="">')
                     audioElement.setAttribute('src', 'audio/jenny1.mp3' );
-                    audioElement.play();
+                    setTimeout(()=> {audioElement.play();
+                    }, 500);
                     clear();
                 }
                 if (cheatArr.length > 11) {
