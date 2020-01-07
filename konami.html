@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    (() => {
+        'use strict';
+        $(document).ready(() => {
+            let cheatArr = [];
+            $(document).keyup(function(event){
+               cheatArr.push(event.key);
+               console.log(cheatArr);
+            });
+            const clear = () => cheatArr = [];
+            const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+            if (cheatArr ===
+
+
+
+        });
+    })();
+</script>
+</body>
+</html>
