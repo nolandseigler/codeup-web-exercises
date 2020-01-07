@@ -5,7 +5,7 @@
     <style>
         #background-div {
             position: fixed;
-            top: -50%;
+            top: -20%;
             left: -50%;
             width: 200%;
             height: 190%;
@@ -29,6 +29,16 @@
             margin: auto;
             width: 50%;
             height: 80%;
+        }
+        #hackerman-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 400px;
+            margin: auto;
+            width: 50%;
+            height: 60%;
         }
     </style>
 </head>
@@ -61,10 +71,10 @@
                console.log(cheatArr);
                console.log(konamiCodeStr);
                if (inputStr === konamiCodeStr) {
-                   $('#background-div').html('<img src="https://media.giphy.com/media/RyXVu4ZW454IM/giphy.gif" id="background-img" alt="">')
+                   $('#background-div').html('<img src="https://media.giphy.com/media/RyXVu4ZW454IM/giphy.gif" id="hackerman-img" alt="">')
                    //update this
                    alert('You have added 30 lives');
-                   audioElement.setAttribute('src', 'audio/toss-a-coin-to-your-witcher.mp3' );
+                   audioElement.setAttribute('src', 'audio/contra.mp3' );
                    audioElement.play();
                    clear();
                }
@@ -82,6 +92,9 @@
                     clear();
                 }
                 if (cheatArr.length > 11) {
+                    clear();
+                };
+                if (inputStr === (/clear/ig)) {
                     clear();
                 };
             });
