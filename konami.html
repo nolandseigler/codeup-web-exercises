@@ -94,7 +94,8 @@
                 if (cheatArr.length > 11) {
                     clear();
                 };
-                if (inputStr === (/clear/ig)) {
+                //this is awesome!! look below. could prob also use inputStr.indexof('clear') !== -1
+                if ((new RegExp('clear')).test(inputStr)) {
                     clear();
                 };
             });
