@@ -2,26 +2,59 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        #background-div {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+        }
+        #background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            min-width: 50%;
+            min-height: 50%;
+        }
+    </style>
 </head>
 <body>
 <h1>Konami Code</h1>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<div id="background-div"><img src="img/witcher1.jpeg" id='background-img' alt=""></div>
 <script>
     (() => {
         'use strict';
         $(document).ready(() => {
             let cheatArr = [];
+            let inputStr;
+            const clear = () => {
+                cheatArr = [];
+                inputStr = '';
+            }
+            const code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+            const stringCode = code.join('');
             $(document).keyup(function(event){
                cheatArr.push(event.key);
+               inputStr = cheatArr.join('')
                console.log(cheatArr);
+               console.log(stringCode);
+                if (cheatArr.length === 11) {
+                    console.log(typeof cheatArr);
+                    if (inputStr === stringCode) {
+                        console.log('Victory');
+                    } else {
+                        clear();
+                    }
+                } else if (cheatArr.length > 11) {
+                    clear();
+                };
             });
-            const clear = () => cheatArr = [];
-            const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-            if (cheatArr ===
-
-
-
         });
     })();
 </script>
