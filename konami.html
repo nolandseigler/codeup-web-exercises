@@ -17,8 +17,6 @@
             right: 0;
             bottom: 0;
             margin: auto;
-            min-width: 50%;
-            min-height: 50%;
         }
     </style>
 </head>
@@ -26,32 +24,49 @@
 <h1>Konami Code</h1>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<div id="background-div"><img src="img/witcher1.jpeg" id='background-img' alt=""></div>
+<div id="background-div"></div>
 <script>
     (() => {
         'use strict';
         $(document).ready(() => {
+            $('#background-div').html('<img src="img/gradius.png" id="background-img" alt="">');
             let cheatArr = [];
             let inputStr;
+            let audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'audio/toss-a-coin-to-your-witcher.mp3' );
             const clear = () => {
                 cheatArr = [];
                 inputStr = '';
-            }
-            const code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
-            const stringCode = code.join('');
+            };
+            const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+            const konamiCodeStr = konamiCode.join('');
+            const jenny = ['8', '6', '7', '5','3', '0', '9'];
+            const jennyStr = jenny.join('');
+            const lostNumbers = ['4', '8', '15', '16', '23', '42'];
+            const lostNumbersStr = lostNumbers.join('');
             $(document).keyup(function(event){
                cheatArr.push(event.key);
-               inputStr = cheatArr.join('')
+               inputStr = cheatArr.join('');
                console.log(cheatArr);
-               console.log(stringCode);
-                if (cheatArr.length === 11) {
-                    console.log(typeof cheatArr);
-                    if (inputStr === stringCode) {
-                        console.log('Victory');
-                    } else {
+               console.log(konamiCodeStr);
+               if (inputStr === konamiCodeStr) {
+                        $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
+                        audioElement.play();
                         clear();
-                    }
-                } else if (cheatArr.length > 11) {
+               }
+                if (inputStr === jennyStr) {
+                    $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
+                    audioElement.setAttribute('src', 'audio/jenny1.mp3' );
+                    audioElement.play();
+                    clear();
+                }
+                if (inputStr === lostNumbersStr) {
+                    $('#background-div').html('<img src="img/witcher3.jpeg" id="background-img" alt="">')
+                    audioElement.setAttribute('src', 'audio/jenny1.mp3' );
+                    audioElement.play();
+                    clear();
+                }
+                if (cheatArr.length > 11) {
                     clear();
                 };
             });
