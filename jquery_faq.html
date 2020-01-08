@@ -23,6 +23,17 @@
             $('#click').click(function() {
                 $('dd').toggleClass('invisible');
             });
+            $('dt').click(function() {
+                function getRandomColor() {
+                    let letters = '0123456789ABCDEF'
+                    let color = '#';
+                    for (let i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() *16)];
+                    }
+                    return color;
+                }
+                $(this).next().css('background-color', getRandomColor());
+            });
         });
     })();
 </script>
