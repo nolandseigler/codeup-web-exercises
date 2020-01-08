@@ -3,13 +3,17 @@
 <head>
     <title>National Park FAQs</title>
     <style>
-        .invisible {
+        .hide {
             display: none;
         }
     </style>
 </head>
 <body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<div id="email-div">
+    <h1 id="sign-up">Would you like to sign up for our news letter?</h1>
+    <span id="x">X</span>
+</div>
 <h1>Parks List</h1>
 <h3>Archess</h3>
 <ul id="archess-list">
@@ -33,6 +37,7 @@
     <li>Most significant breeding grounds for tropical wading birds in North America</li>
 </ul>
 <button type="buttton" id="highlight">Highlight Last Fact For Each Park</button>
+<h2 id="register">Would you like to register for our website?</h2>
 <script>
     (() => {
         'use strict';
@@ -45,18 +50,26 @@
                 }
                 return color;
             }
+            $('h3').next().children('li').hide();
+            $('#register').hide();
             $('#highlight').click(function() {
                 $('ul').each(function(i, element) {
                     console.log(element);
                     $(element).children('li').last().css('background-color', (getRandomColor()));
                 });
             });
-            $('h3').click(function() {
-                $(this).next().children('li').css('font-weight', 'bold');
+            $('h3').click(function(){
+                $(this).next().children('li').css('font-weight', 'bold').slideToggle();
             });
             $('li').click(function(){
                 $(this).parent('ul').children('li').first().css('color', 'blue');
             });
+            $('#x').click(function(){
+                $('#email-div').hide();
+            })
+            setTimeout(function(){
+                $('#register').fadeIn(1000)
+            }, 8000)
         });
     })();
 </script>
