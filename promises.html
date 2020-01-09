@@ -19,30 +19,21 @@
     });
 }
 
-wait(1000).then(() => console.log(`You'll see this after 1 second`));
+// wait(1000).then(() => console.log(`You'll see this after 1 second`));
 
-// function getGithubUsernames() {
-//     return fetch('https://api.github.com/users', {headers: {"Authorization": `${githubKey}`}})
-//         .then(response => response.json())
-//         .then(users => users.map(user => user.login));
-// }
-//
-// // later on...
-//
-// getGithubUsernames().then((usernames) => {
-//     usernames.forEach((username) => {
-//         console.log(username)
-//     });
-// }).catch(error => console.error(error));
+function getGithubUserData(username) {
+    return fetch(`https://api.github.com/search/repositories?q=user:${username}&&sort=updated`, {headers: {"Authorization": `${githubKey}`}})
+        .then(response => response.json())
+        .then(response => response['items'][0]['full_name'])
+        .then(response => {
+             return fetch(`https://api.github.com/repos/${response}/commits`, {headers: {"Authorization": `${githubKey}`}})
+        })
+        .then(response => response.json())
+        .then(response => console.log(response[0]['sha']));
 
-function getGithubUserData(user) {
-    return fetch(`https://api.github.com/search/users?q=${user}+repos`, {headers: {"Authorization": `${githubKey}`}})
-        .then(function(response) {
-            console.log(response);
-        });
 
 }
-getGithubUserData('bob');
+getGithubUserData('nolandseigler');
 
 </script>
 <div id="output"></div>
