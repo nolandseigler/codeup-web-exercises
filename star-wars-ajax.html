@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STAR WARS AJAX</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<div id="anakin"></div>
+<div id="luke"></div>
+<div id="kylo"></div>
+
+
+
+<script>
+    (() => {
+        'use strict';
+        $(document).ready(() => {
+            let baseUrl = 'https://swapi.co/api/people?search=';
+            // $.ajax(baseUrl + 'anakin')
+            // .done(function (res) {
+            //     let output = JSON.stringify(res)
+            //     $('#anakin').html(`${output}`).css('border', 'solid red 2px');
+            // })
+            // .fail(function (jqXHr, status, err) {
+            //     console.log("Call failed");
+            //     console.log(status);
+            //     console.log(err);
+            // })
+            // $.ajax(baseUrl + 'luke')
+            //     .done(function (res) {
+            //         let output = JSON.stringify(res)
+            //         $('#luke').html(`${output}`).css('border', 'solid blue 2px');
+            //     })
+            //     .fail(function (jqXHr, status, err) {
+            //         console.log("Call failed");
+            //         console.log(status);
+            //         console.log(err);
+            //     })
+            // $.ajax(baseUrl + 'kylo')
+            //     .done(function (res) {
+            //         let output = JSON.stringify(res)
+            //         $('#kylo').html(`${output}`).css('border', 'solid red 2px');
+            //     })
+            //     .fail(function (jqXHr, status, err) {
+            //         console.log("Call failed");
+            //         console.log(status);
+            //         console.log(err);
+            //     })
+            $.ajax(baseUrl + 'anakin')
+                .done(function (res) {
+                    let output = JSON.stringify(res)
+                    $('#anakin').html(`${output}`).css('border', 'solid red 2px');
+                })
+                .done(function () {
+                    $.ajax(baseUrl + 'luke')
+                        .done(function (res) {
+                            let output = JSON.stringify(res)
+                            $('#luke').html(`${output}`).css('border', 'solid blue 2px');
+                        })
+                })
+                .done(function() {
+                    $.ajax(baseUrl + 'kylo')
+                        .done(function (res) {
+                            if (res['count'] === 0) {
+                                $('#kylo').html(`Search not found in database. Please try again.`).css('border', 'solid red 2px');
+                            } else {
+                                let output = JSON.stringify(res)
+                                $('#kylo').html(`${output}`).css('border', 'solid red 2px');
+                            }
+                        })
+                })
+                .fail(function (jqXHr, status, err) {
+                    console.log("Call failed");
+                    console.log(status);
+                    console.log(err);
+                })
+        });
+    })();
+</script>
+</body>
+</html>
