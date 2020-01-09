@@ -30,5 +30,30 @@
     "tool"
   ],
   "price": 10
+},
+  {
+    "title": "Banana",
+    "quantity": 25,
+    "categories": [
+      "instrument"
+    ],
+    "price": 20
+  }, {
+  "title": "Saw",
+  "quantity": 5,
+  "categories": [
+    "tool",
+    "powered"
+  ],
+  "price": 100
+}, {
+  "title": "Jackhammer",
+  "quantity": 3,
+  "categories": [
+    "tool",
+    "gas",
+    "outdoor"
+  ],
+  "price": 200
 }
 ]
