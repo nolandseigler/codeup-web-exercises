@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>AJAX Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <h1>Weather Application</h1>
@@ -10,19 +11,23 @@
 <div id="today"></div>
 <div id="tomorrow"></div>
 <div id="day-after"></div>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/skycons.js"></script>
 <script>
     (() => {
         'use strict';
         $(document).ready(() => {
-            var skycons = new Skycons({"color": "#DAF7A6"});
-            const icons = [{clearday: Skycons.CLEAR_DAY}, {clearnight: Skycons.CLEAR_NIGHT}, {rain: Skycons.RAIN}, {snow: Skycons.SNOW}, {sleet: Skycons.SLEET}, {wind: Skycons.FOG}, {fog: Skycons.FOG}, {cloudy: Skycons.CLOUDY}, {partlycloudyday: Skycons.PARTLY_CLOUDY_DAY}, {partlycloudynight: Skycons.PARTLY_CLOUDY_NIGHT}]
+
+            const iconsObj = {"clearday": {"icon": Skycons.CLEAR_DAY, "color": "red"}, "clearnight": {"icon": Skycons.CLEAR_NIGHT, "color": "green"}, "rain": {"icon": Skycons.RAIN, "color": "purple"}, "snow": {"icon": Skycons.SNOW, "color": "yellow"}, "sleet": {"icon": Skycons.SLEET, "color": "teal"}, "wind": {"icon": Skycons.WIND, "color": "grey"}, "fog": {"icon": Skycons.FOG, "color": "silver"}, cloudy: {"icon": Skycons.CLOUDY, "color": "red"}, "partlycloudyday": {"icon": Skycons.PARTLY_CLOUDY_DAY, "color": "grey"}, "partlycloudynight": {"icon": Skycons.PARTLY_CLOUDY_NIGHT, "color": "grey"}};
             const getWeather = function () {
                 $.ajax(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARK_SKY_KEY}/29.4241,-98.4936`).done(function(data) {
                     let dailyDataArr = data['daily']['data']
                     for (let i = 0; i <= 2; i++) {
+                        let date = new Date(dailyDataArr[i]['time'] * 1000);
+                        date = date.toDateString();
                         let summary = dailyDataArr[i]['summary'];
                         let icon = dailyDataArr[i]['icon'];
                         let high = Math.ceil(dailyDataArr[i]['temperatureHigh']);
@@ -31,16 +36,26 @@
                         let wind = dailyDataArr[i]['windSpeed'];
                         let pressure = dailyDataArr[i]['pressure'];
                         if (i === 0) {
-                            $('#today').html(`<ul id="today-ul"><li id="today-summary"> Weather Summary: ${summary}</li><li id="today-icon"><canvas id="icon1" width="128" height="128"></canvas>${icon}</li><li id="today-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="today-humidity">Humidity: ${humidity}</li><li id="today-wind">Wind Speed: ${wind}</li><li id="today-pressure">Pressure: ${pressure}</li></ul>`)
-                            skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
-                            skycons.play();
+                            $('#today').html(`<p>${date}</p><ul id="today-ul"><li id="today-summary"> Weather Summary: ${summary}</li><li id="today-icon"><canvas id="icon1" width="128" height="128"></canvas></li><li id="today-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="today-humidity">Humidity: ${humidity}</li><li id="today-wind">Wind Speed: ${wind}</li><li id="today-pressure">Pressure: ${pressure}</li></ul>`);
+                            var skyconsToday = new Skycons({"color": iconsObj[icon.split('-').join('')]["color"]});
+                                skyconsToday.add("icon1", iconsObj[icon.split("-").join('')]["icon"]);
+                            skyconsToday.play();
                         } else if (i === 1) {
-                            $('#tomorrow').html(`<ul id="tomorrow-ul"><li id="tomorrow-summary"> Weather Summary: ${summary}</li><li id="tomorrow-icon">${icon}</li><li id="tomorrow-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="tomorrow-humidity">Humidity: ${humidity}</li><li id="tomorrow-wind">Wind Speed: ${wind}</li><li id="tomorrow-pressure">Pressure: ${pressure}</li></ul>`)
+                            $('#tomorrow').html(`<p>${date}</p><ul id="tomorrow-ul"><li id="tomorrow-summary"> Weather Summary: ${summary}</li><li id="tomorrow-icon"><canvas id="icon2" width="128" height="128"></canvas></li><li id="tomorrow-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="tomorrow-humidity">Humidity: ${humidity}</li><li id="tomorrow-wind">Wind Speed: ${wind}</li><li id="tomorrow-pressure">Pressure: ${pressure}</li></ul>`);
+                            var skyconsTomorrow = new Skycons({"color": iconsObj[icon.split('-').join('')]["color"]});
+                            skyconsTomorrow.add("icon2", iconsObj[icon.split("-").join('')]["icon"]);
+                            skyconsTomorrow.play();
                         } else if (i === 2) {
-                            $('#day-after').html(`<ul id="day-after-ul"><li id="day-after-summary"> Weather Summary: ${summary}</li><li id="day-after-icon">${icon}</li><li id="day-after-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="day-after-humidity">Humidity: ${humidity}</li><li id="day-after-wind">Wind Speed: ${wind}</li><li id="day-after-pressure">Pressure: ${pressure}</li></ul>`)
+                            $('#day-after').html(`<p>${date}</p><ul id="day-after-ul"><li id="day-after-summary"> Weather Summary: ${summary}</li><li id="day-after-icon"><canvas id="icon3" width="128" height="128"></canvas></li><li id="day-after-temps">Temperature: ${high}&deg; / ${low}&deg;</li><li id="day-after-humidity">Humidity: ${humidity}</li><li id="day-after-wind">Wind Speed: ${wind}</li><li id="day-after-pressure">Pressure: ${pressure}</li></ul>`);
+                            var skyconsDayAfter = new Skycons({"color": iconsObj[icon.split('-').join('')]["color"]});
+                            skyconsDayAfter.add("icon3", iconsObj[icon.split("-").join('')]["icon"]);
+                            skyconsDayAfter.play();
                         } else {
                           console.log("error in getWeather");
                         }
+
+
+
                     }
                 });
             }
