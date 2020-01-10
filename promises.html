@@ -29,11 +29,17 @@ function getGithubUserData(username) {
              return fetch(`https://api.github.com/repos/${response}/commits`, {headers: {"Authorization": `${githubKey}`}})
         })
         .then(response => response.json())
-        .then(response => console.log(response[0]['sha']));
+        .then(response => {
+            for (var i = 0; i < response.length; i++) {
+                if (response[i]['committer']['login'] === username){
+                    return console.log(response[i]['sha']);
+                }
+            }
+        })
+};
 
 
-}
-getGithubUserData('nolandseigler');
+getGithubUserData('defunkt');
 
 </script>
 <div id="output"></div>
