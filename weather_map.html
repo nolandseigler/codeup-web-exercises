@@ -142,6 +142,7 @@
                     map.setCenter(result);
                 });
                geoSearch($('#city-search-input').val(), mapboxToken).then(result => getWeather(result));
+               $('#city-search-input').val('');
             });
         });
     })();
