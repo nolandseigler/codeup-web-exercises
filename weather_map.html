@@ -6,7 +6,11 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <style>
-    h1 {
+    #custom #weather-application {
+        color: lightgrey;
+        text-align: center;
+    }
+    #custom #location {
         color: lightgrey;
         text-align: center;
     }
@@ -17,14 +21,13 @@
         background-color: lightgrey;
     }
     #custom #map {
-        height: 50vh;
+        height: 47vh;
     }
 </style>
 <body id="custom">
 <br>
-<h1>Weather Application</h1>
-<br>
-<h3 id="location"></h3>
+<h1 id="weather-application">Weather Application</h1>
+<h3 id="location">San Antonio, Texas 78205, United States </h3>
 <div class="container">
     <div class="card-deck">
         <div id="today" class="card border-secondary"></div>
@@ -125,6 +128,20 @@
                         return [result[1], result[0]];
                     });
             };
+            function reverseGeoSearch(coordinates, token) {
+                var baseUrl = 'https://api.mapbox.com';
+                var endPoint = '/geocoding/v5/mapbox.places/';
+                var lng = coordinates[0];
+                var lat = coordinates[1];
+                return fetch(baseUrl + endPoint + lng + "," + lat + '.json' + "?" + 'access_token=' + token)
+                    .then(function(res) {
+                        return res.json();
+                    })
+                    // to get all the data from the request, comment out the following three lines...
+                    .then(function(data) {
+                        return data.features[0].place_name;
+                    });
+            }
             //
             //mapbox vars
             mapboxgl.accessToken = mapboxToken;
@@ -164,8 +181,16 @@
                 let lngLat = marker.getLngLat();
                 let searchCoords = [lngLat['lat'], lngLat['lng']];
                 getWeather(searchCoords);
-                geoCenter([lngLat['lng'], lngLat['lat']], mapboxToken).then(result => {
+                geoCenter([lngLat['lng'], lngLat['lat']], mapboxToken)
+                    .then(result => {
                     map.setCenter(result);
+                    reverseGeoSearch(result, mapboxToken)
+                        .then(result => {
+                            let location = result.split(',')
+                            location.shift();
+                            location = location.join(', ');
+                            $('#location').html(location);
+                        })
                 });
             }));
             // http://dataservice.accuweather.com/locations/v1/cities/geoposition/search.json?q=29.4241, -98.4936&apikey=lH2wqmPavmv66mnKgEi5hFohpZjpoKQE
