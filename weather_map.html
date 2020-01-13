@@ -124,7 +124,6 @@
                         return data.features[0]["center"];
                     })
                     .then(function(result) {
-                        console.log(result)
                         return [result[1], result[0]];
                     });
             };
@@ -171,6 +170,15 @@
                // getWeather(geoSearch(($('#city-search-input').val()),mapboxToken));
                geoCenter($('#city-search-input').val(), mapboxToken).then(result => {
                     map.setCenter(result);
+                   reverseGeoSearch(result, mapboxToken)
+                       .then(result => {
+                           let location = result.split(',')
+                           while (location.length > 3) {
+                               location.shift();
+                           }
+                           location = location.join(', ');
+                           $('#location').html(location);
+                       })
                     marker.setLngLat(result);
                 });
                geoSearch($('#city-search-input').val(), mapboxToken)
@@ -187,32 +195,14 @@
                     reverseGeoSearch(result, mapboxToken)
                         .then(result => {
                             let location = result.split(',')
-                            location.shift();
+                            while (location.length > 3) {
+                                location.shift();
+                            }
                             location = location.join(', ');
                             $('#location').html(location);
                         })
                 });
             }));
-            // http://dataservice.accuweather.com/locations/v1/cities/geoposition/search.json?q=29.4241, -98.4936&apikey=lH2wqmPavmv66mnKgEi5hFohpZjpoKQE
-            // function getLocationKey(latLng) {
-            //     let lat = latLng[0];
-            //     let lng = latLng[1];
-            //     var locationUrl = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search.json?q=${lat},${lng}&apikey=${ACCU_WEATHER_KEY}`;
-            //     return fetch(locationUrl)
-            //         .then(function(res) {
-            //             return res.json();
-            //         })
-            //         .then(function(data) {
-            //             console.log(data["Key"]);
-            //             return data["Key"];
-            //         })
-            //         .then(function(locationKey) {
-            //             let imageryUrl = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search.json?q=${lat},${lng}&apikey=${ACCU_WEATHER_KEY}`
-            //             return
-            //         })
-            // };
-            // getLocationKey([29.4241, -98.4936]);
-
         });
     })();
 </script>
