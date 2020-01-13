@@ -3,6 +3,7 @@
 <head>
     <title>AJAX Template</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <style>
     h1 {
@@ -14,6 +15,9 @@
     }
     #custom .card {
         background-color: lightgrey;
+    }
+    #custom #map {
+        height: 50vh;
     }
 </style>
 <body id="custom">
@@ -44,7 +48,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/skycons.js"></script>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 
 
 <script>
@@ -52,7 +56,7 @@
         'use strict';
         $(document).ready(() => {
             //darksky vars
-            const iconsObj = {"clearday": {"icon": Skycons.CLEAR_DAY, "color": "#fcba03"}, "clearnight": {"icon": Skycons.CLEAR_NIGHT, "color": "#fcba03"}, "rain": {"icon": Skycons.RAIN, "color": "blue"}, "snow": {"icon": Skycons.SNOW, "color": "white"}, "sleet": {"icon": Skycons.SLEET, "color": "white"}, "wind": {"icon": Skycons.WIND, "color": "silver"}, "fog": {"icon": Skycons.FOG, "color": "silver"}, cloudy: {"icon": Skycons.CLOUDY, "color": "grey"}, "partlycloudyday": {"icon": Skycons.PARTLY_CLOUDY_DAY, "color": "#fcba03"}, "partlycloudynight": {"icon": Skycons.PARTLY_CLOUDY_NIGHT, "color": "grey"}};
+            const iconsObj = {"clearday": {"icon": Skycons.CLEAR_DAY, "color": "#fcba03"}, "clearnight": {"icon": Skycons.CLEAR_NIGHT, "color": "#fcba03"}, "rain": {"icon": Skycons.RAIN, "color": "blue"}, "snow": {"icon": Skycons.SNOW, "color": "white"}, "sleet": {"icon": Skycons.SLEET, "color": "white"}, "wind": {"icon": Skycons.WIND, "color": "white"}, "fog": {"icon": Skycons.FOG, "color": "white"}, cloudy: {"icon": Skycons.CLOUDY, "color": "grey"}, "partlycloudyday": {"icon": Skycons.PARTLY_CLOUDY_DAY, "color": "#fcba03"}, "partlycloudynight": {"icon": Skycons.PARTLY_CLOUDY_NIGHT, "color": "grey"}};
             //
             //darksky getWeather updates all weather
             const getWeather = function (inputArr) {
@@ -88,6 +92,10 @@
                         }
                     }
                 });
+            // mapbox markers
+
+
+
             };
             //
             //mapbox functions
@@ -123,16 +131,24 @@
             var mapOptions = {
                 container: 'map',
                 style: 'mapbox://styles/mapbox/satellite-streets-v11',
+                center: [-98.4936, 29.4241],
                 zoom: 5
             };
             var markerOptions = {
                 color: "ff0000",
                 draggable: true
             };
-            //
+
+
             const map = new mapboxgl.Map(mapOptions);
+            const marker = new mapboxgl.Marker(
+                markerOptions)
+                .setLngLat([-98.4936, 29.4241])
+                .addTo(map);
+
             geoCenter("San Antonio, Texas", mapboxToken).then(result => {
                 map.setCenter(result);
+                // marker.setLngLat(result);
             });
             // getWeather("29.4241", "-98.4936");
             getWeather([29.4241, -98.4936]);
@@ -140,10 +156,22 @@
                // getWeather(geoSearch(($('#city-search-input').val()),mapboxToken));
                geoCenter($('#city-search-input').val(), mapboxToken).then(result => {
                     map.setCenter(result);
+                    marker.setLngLat(result);
                 });
-               geoSearch($('#city-search-input').val(), mapboxToken).then(result => getWeather(result));
+               geoSearch($('#city-search-input').val(), mapboxToken)
+                   .then(result => getWeather(result));
                $('#city-search-input').val('');
             });
+            marker.on('dragend', (function() {
+                let lngLat = marker.getLngLat();
+                let searchCoords = [lngLat['lat'], lngLat['lng']];
+                getWeather(searchCoords);
+                geoCenter([lngLat['lng'], lngLat['lat']], mapboxToken).then(result => {
+                    map.setCenter(result);
+                });
+            }));
+
+
         });
     })();
 </script>
