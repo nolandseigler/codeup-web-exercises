@@ -5,22 +5,53 @@
     <title>ES6 Lecture Practice</title>
 </head>
 <body>
-
+<button type="button" id="change">Change Bacckground Color</button>
 <script>
-    // console.log(notHoisted());
-    const notHoisted = () => {
-        console.log("Not hoisted function.")
+    // // console.log(notHoisted());
+    // const notHoisted = () => {
+    //     console.log("Not hoisted function.")
+    // }
+    // function hoisted() {
+    //     console.log('Hoisted function');
+    //     console.log('"a"' + ' is a hoisted var that is set as undefined');
+    //     console.log(a);
+    //     console.log('"b"' + ' throws an error because let doesnt hoist');
+    //     console.log(b);
+    //     var a = 1;
+    //     let b = 2//const acts the same as let
+    // }
+    // console.log(hoisted());
+    const hex = () => {
+        const vals = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let hexColor = ['#'];
+        let i = 0;
+        while (i <= 5) {
+            hexColor.push(vals[Math.ceil(Math.random() * (vals.length - 1))]);
+            i++;
+        }
+        hexColor = hexColor.join('');
+        return hexColor;
     }
-    function hoisted() {
-        console.log('Hoisted function');
-        console.log('"a"' + ' is a hoisted var that is set as undefined');
-        console.log(a);
-        console.log('"b"' + ' throws an error because let doesnt hoist');
-        console.log(b);
-        var a = 1;
-        let b = 2//const acts the same as let
-    }
-    console.log(hoisted());
+    document.querySelector('#change').addEventListener('click', () => {
+        const crazyColor = () => {
+            document.querySelector("body").style.backgroundColor = hex();
+        }
+        // if (document.querySelector("body").style.backgroundColor === '') {
+        //     let crazyColorInterval = setInterval(crazyColor, 1000);
+        // } else {
+        //     clearInterval(crazyColorInterval);
+        //}
+        const crazyColorInterval = setInterval(crazyColor, 1000);
+        if (document.querySelector("body").style.backgroundColor !== '') {
+            clearInterval(crazyColorInterval);
+            console.log("Should be clear");
+        } else {
+            let crazyColorInterval = setInterval(crazyColor, 1000);
+            console.log('Not Clear');
+        };
+
+    });
+
 </script>
 </body>
 </html>
