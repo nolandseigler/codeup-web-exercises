@@ -65,6 +65,9 @@
                 $('.container').css('background-color', 'pink');
             }, 3000);
             $('#add-to-list').click(async() => {
+                if ($('#input').val() === '') {
+                    return;
+                }
                 await $('#favorite-food').append(`<li>${$('#input').val()}</li>`);
                 $('#input').val('');
             });
