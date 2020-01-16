@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 Lecture Practice</title>
+</head>
+<body>
+
+<script>
+    // console.log(notHoisted());
+    const notHoisted = () => {
+        console.log("Not hoisted function.")
+    }
+    function hoisted() {
+        console.log('Hoisted function');
+        console.log('"a"' + ' is a hoisted var that is set as undefined');
+        console.log(a);
+        console.log('"b"' + ' throws an error because let doesnt hoist');
+        console.log(b);
+        var a = 1;
+        let b = 2//const acts the same as let
+    }
+    console.log(hoisted());
+</script>
+</body>
+</html>
