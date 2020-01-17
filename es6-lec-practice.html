@@ -26,7 +26,7 @@
         let hexColor = ['#'];
         let i = 0;
         while (i <= 5) {
-            hexColor.push(vals[Math.ceil(Math.random() * (vals.length - 1))]);
+            hexColor.push(vals[Math.ceil(Math.random() * (vals.length))]);
             i++;
         }
         hexColor = hexColor.join('');
@@ -49,6 +49,13 @@
             let crazyColorInterval = setInterval(crazyColor, 1000);
             console.log('Not Clear');
         };
+    });
+    //check this in europa directory
+    let goldReindeerNamesAndGold = reindeer.map(({ name, isGold}) => {
+        return {
+            name,
+            isGold
+        }
     });
 
 </script>
