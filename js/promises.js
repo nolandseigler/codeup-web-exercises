@@ -14,21 +14,27 @@ const wait = function (time) {
 // wait(1000).then(() => console.log(`You'll see this after 1 second`));
 
 function getGithubUserData(username) {
-    return fetch(`https://api.github.com/search/repositories?q=user:${username}&&sort=updated`, {headers: {"Authorization": `${githubKey}`}})
+    return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`, {
+        headers: {
+            'Authorization': githubKey,
+            'Accept': 'application/vnd.github.cloak-preview'
+        }
+    })
         .then(response => response.json())
-        .then(response => response['items'][0]['full_name'])
-        .then(response => {
-            return fetch(`https://api.github.com/repos/${response}/commits`, {headers: {"Authorization": `${githubKey}`}})
-        })
-        .then(response => response.json())
-        .then(response => {
-            for (let i = 0; i < response.length; i++) {
-                if (response[i]['committer']['login'] === username){
-                    console.log(response[i]['sha'])
-                    return (response[i]['sha']);
-                }
-            }
+        .then(res => {
+            console.log(res);
+            let commit = res['items'][0]['commit'];
+            let repo = res['items'][0]['repository']
+            let commitInfo = {
+                url: commit,
+                committer: commit['committer']['name'],
+                date: commit['committer']['date'],
+                message: commit['message'],
+                repository: repo['name'],
+                repositoryOwner: repo['owner']['login']
+            };
+            return commitInfo;
         })
 };
 
-getGithubUserData('nolandseigler');
+console.log(getGithubUserData('nolandseigler'));
