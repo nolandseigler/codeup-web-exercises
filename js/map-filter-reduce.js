@@ -1,32 +1,3 @@
-const hex = () => {
-    const vals = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-    let hexColor = ['#'];
-    let i = 0;
-    while (i <= 5) {
-        hexColor.push(vals[Math.ceil(Math.random() * (vals.length))]);
-        i++;
-    }
-    hexColor = hexColor.join('');
-    return hexColor;
-}
-document.querySelector('#change').addEventListener('click', () => {
-    const crazyColor = () => {
-        document.querySelector("body").style.backgroundColor = hex();
-    }
-    // if (document.querySelector("body").style.backgroundColor === '') {
-    //     let crazyColorInterval = setInterval(crazyColor, 1000);
-    // } else {
-    //     clearInterval(crazyColorInterval);
-    //}
-    const crazyColorInterval = setInterval(crazyColor, 1000);
-    if (document.querySelector("body").style.backgroundColor !== '') {
-        clearInterval(crazyColorInterval);
-        console.log("Should be clear");
-    } else {
-        let crazyColorInterval = setInterval(crazyColor, 1000);
-        console.log('Not Clear');
-    };
-});
 
 const users = [
     {
@@ -66,9 +37,60 @@ const users = [
     }
 ];
 
-const languagesArr = users.map(function(obj) { return obj['languages']
-}).filter(function(languagesArr) {
-    return languagesArr.length >= 3;
-});
+const trilinguists = users.filter(user => user.languages.length >= 3);
+// console.log(languagesArr);
+const emailsArr = users.map(user => user['email']);
 
-console.log(languagesArr);
+const averageYearsExperience = () => {
+    let i = 0;
+    const totalYearsExperience = users.map(user => user['yearsOfExperience']).reduce((total, experience) => {
+        // console.log(experience);
+        total = experience + total;
+        i++;
+        return total;
+    }, 0);
+    return parseInt(totalYearsExperience / i);
+}
+
+
+const longestEmail = emailsArr.reduce((accum, email) => {
+    return email.length > accum.length ? accum = email : accum = accum;
+}, '');
+
+// const getInstructors = inputStr => {
+//     const instructors = inputStr.split(' '); // transform a sentence into an array of words
+//     const userList = users.map(user => user['name']);
+//     const instructorsObject = instructors.reduce((accum, word) => {
+//
+//         if (typeof accum[word] === 'undefined') {
+//             // if the word is not yet present in our object, set it's value to 1
+//             console.log(word);
+//             let newWord = word.replace(',', '');
+//             console.log(newWord);
+//             if (userList.includes(newWord)) {
+//                 accum[newWord] = newWord;
+//             };
+//
+//         }
+//         return accum;
+//     }, {}); // start with an empty object
+//     return Object.keys(instructorsObject);
+//
+// };
+
+// // console.log(emailsArr);
+// console.log(averageYearsExperience());
+// console.log(longestEmail);
+// console.log(getInstructors('Your instructors are: ryan, luis, zach, fernando, justin.'
+// ));
+const greeting = users.reduce((runningGreeting, user) => {
+    return runningGreeting += user.name + ', ';
+}, "Your instructors are: ");
+let properGreeting = greeting.substring(0, greeting.length -2) + '.';
+console.log(properGreeting);
+
+const uniqueLanguages = users.reduce((languages, user) => {
+
+}, '');
+
+console.log(uniqueLanguages);

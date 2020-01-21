@@ -241,50 +241,56 @@
 //     }
 // ];
 // console.log(goldDeer(reindeerList));
-        var hamsters = [
-            {
-                name: "Hamtaro",
-                heightInMM: 86,
-                fur: ['orange', 'white'],
-                gender: "male",
-                dateOfBirth: "August 6"
-            } , {
-                name: "Bijou",
-                heightInMM: 75,
-                fur: ['white'],
-                gender: "female",
-                dateOfBirth: "July 10"
-            } , {
-                name: "Oxnard",
-                heightInMM: 100,
-                fur: ['grey', 'white'],
-                gender: "male",
-                dateOfBirth: "May 3"
-            } , {
-                name: "Boss",
-                heightInMM: 120,
-                fur: ['brown', 'white'],
-                gender: "male",
-                dateOfBirth: "Spetember 21"
-            } , {
-                name: "Snoozer",
-                heightInMM: 85,
-                fur: ['brown', 'white', "pink"],
-                gender: "male",
-                dateOfBirth: "January 14"
-            }
-        ];
-        const averageHamHeight = function(hamArr) {
-            let i = 0;
-            let total = 0;
-            hamArr.forEach(function(ham){
-                total = ham.heightInMM + total;
-                i++;
-            })
-            return total / i;
-        }
+//         var hamsters = [
+//             {
+//                 name: "Hamtaro",
+//                 heightInMM: 86,
+//                 fur: ['orange', 'white'],
+//                 gender: "male",
+//                 dateOfBirth: "August 6"
+//             } , {
+//                 name: "Bijou",
+//                 heightInMM: 75,
+//                 fur: ['white'],
+//                 gender: "female",
+//                 dateOfBirth: "July 10"
+//             } , {
+//                 name: "Oxnard",
+//                 heightInMM: 100,
+//                 fur: ['grey', 'white'],
+//                 gender: "male",
+//                 dateOfBirth: "May 3"
+//             } , {
+//                 name: "Boss",
+//                 heightInMM: 120,
+//                 fur: ['brown', 'white'],
+//                 gender: "male",
+//                 dateOfBirth: "Spetember 21"
+//             } , {
+//                 name: "Snoozer",
+//                 heightInMM: 85,
+//                 fur: ['brown', 'white', "pink"],
+//                 gender: "male",
+//                 dateOfBirth: "January 14"
+//             }
+//         ];
+//         const averageHamHeight = function(hamArr) {
+//             let i = 0;
+//             let total = 0;
+//             hamArr.forEach(function(ham){
+//                 total = ham.heightInMM + total;
+//                 i++;
+//             })
+//             return total / i;
+//         }
+//
+//         averageHamHeight(hamsters);
 
-        averageHamHeight(hamsters);
+
+//are words anagrams?
+        const isAnagram = (inputWord1, inputWord2) =>  inputWord1 === inputWord2 ? false : inputWord1.toLowerCase().split('').sort().join('') ===  inputWord2.toLowerCase().split('').sort().join('') ? true : false;
+
+        console.log(isAnagram('Listen', 'SIlEnt'));
     </script>
 <!--    li.item$*5-->
     <li class="item1"></li>
