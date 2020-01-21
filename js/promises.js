@@ -39,12 +39,11 @@ function getGithubUserData(username) {
 };
 
 console.log(getGithubUserData('nolandseigler'));
-//test
 
 function getGithubUserDataWithEvents (username) {
     return fetch (`https://api.github.com/users/${username}/events`, {
         headers: {
-            'Authorization': githubKey
+            'Authorization': `token ${githubKey}`
         }
     })
         .then(response => response.json())
