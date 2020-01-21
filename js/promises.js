@@ -39,27 +39,28 @@ function getGithubUserData(username) {
 };
 
 console.log(getGithubUserData('nolandseigler'));
+//test
 
-// function getGithubUserDataWithEvents (username) {
-//     return fetch (`https://api.github.com/users/${username}/events`, {
-//         headers: {
-//             'Authorization': githubKey
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(res => res.find(element => element['type'] === 'PushEvent'))
-//         .then(data => {
-//             let commit = data['payload']['commits'][0];
-//             let eventInfo = {
-//                 sha: commit['sha'],
-//                 url: commit['url'],
-//                 committer: commit['author']['name'],
-//                 date: data['created_at'],
-//                 message: commit['message'],
-//                 repository: data['repo']['name'],
-//                 repositoryOwner: `Could not find this using this endpoint(events)`
-//             }
-//             return eventInfo;
-//         })
-// }
-// console.log(getGithubUserDataWithEvents('nolandseigler'));
+function getGithubUserDataWithEvents (username) {
+    return fetch (`https://api.github.com/users/${username}/events`, {
+        headers: {
+            'Authorization': githubKey
+        }
+    })
+        .then(response => response.json())
+        .then(res => res.find(element => element['type'] === 'PushEvent'))
+        .then(data => {
+            let commit = data['payload']['commits'][0];
+            let eventInfo = {
+                sha: commit['sha'],
+                url: commit['url'],
+                committer: commit['author']['name'],
+                date: data['created_at'],
+                message: commit['message'],
+                repository: data['repo']['name'],
+                repositoryOwner: `Could not find this using this endpoint(events)`
+            }
+            return eventInfo;
+        })
+}
+console.log(getGithubUserDataWithEvents('nolandseigler'));
