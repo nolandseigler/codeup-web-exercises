@@ -1,6 +1,6 @@
-const mods = require('./node-test-modules.js');
-// const {hello} = require('./node-test-modules.js');
-const {hello, goodbye, myFunctions} = require('./node-test-modules')
+const mods = require('./node-modules-test.js');
+// const {hello} = require('./node-modules-test.js');
+const {hello, goodbye, myFunctions} = require('./node-modules-test')
 mods.hello();
 hello();
 goodbye()
