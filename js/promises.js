@@ -13,13 +13,17 @@ const wait = function (time) {
 
 // wait(1000).then(() => console.log(`You'll see this after 1 second`));
 
-function getGithubUserData(username) {
+function getGithubLastUserCommit(username) {
     return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`, {
         headers: {
             'Authorization': githubKey,
             'Accept': 'application/vnd.github.cloak-preview'
         }
     })
+        .then(response => {
+            console.log(response);
+            return response;
+        })
         .then(response => response.json())
         .then(res => {
             console.log(res);
@@ -38,9 +42,9 @@ function getGithubUserData(username) {
         })
 };
 
-console.log(getGithubUserData('nolandseigler'));
+console.log(getGithubLastUserCommit('nolandseigler'));
 
-function getGithubUserDataWithEvents (username) {
+function getGithubLastUserCommitWithEvents (username) {
     return fetch (`https://api.github.com/users/${username}/events`, {
         headers: {
             'Authorization': `token ${githubKey}`
@@ -62,4 +66,4 @@ function getGithubUserDataWithEvents (username) {
             return eventInfo;
         })
 }
-console.log(getGithubUserDataWithEvents('nolandseigler'));
+console.log(getGithubLastUserCommitWithEvents('nolandseigler'));
