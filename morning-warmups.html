@@ -5,320 +5,404 @@
         <title>Morning Warmups</title>
     </head>
     <body>
+    <div id="rating-message-container" class="container"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!--    <script>-->
+<!--        "use strict";-->
+<!--        // function helloWorld() {-->
+<!--        //     return console.log(`Hello World.`);-->
+<!--        // }-->
+<!--        // function helloName(name) {-->
+<!--        //     return console.log(`Hello ${name}.`);-->
+<!--        // }-->
+<!--        // function add(x, y) {-->
+<!--        //     let sum = x + y;-->
+<!--        //     return sum;-->
+<!--        // }-->
+<!--        // const addFour = function(a, b, c, d) {-->
+<!--        //     let result = a + b + c +d;-->
+<!--        //     return result;-->
+<!--        // }-->
+<!--        // // function addFour(a, b, c, d) {-->
+<!--        // //     let result = a + b + c +d;-->
+<!--        // //     return result;-->
+<!--        // // }-->
+<!--        // const areaOfRectangle = function(l, w) {-->
+<!--        //     let area = l * w;-->
+<!--        //     return area;-->
+<!--        // }-->
+<!--        // const areaOfRectangleArrow = (l, w) => {-->
+<!--        //     return l * w;-->
+<!--        // }-->
+<!--        // function firstItem(array) {-->
+<!--        //     return array[0];-->
+<!--        // }-->
+<!--        // function arrayLength(inputArray) {-->
+<!--        //     return inputArray.length;-->
+<!--        // }-->
+<!--        // const lastItem = function (inputArray) {-->
+<!--        //     return inputArray[inputArray.length - 1];-->
+<!--        // }-->
+<!--        // const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];-->
+<!--        //-->
+<!--        // const nthItem = function (inputArray, inputNumber) {-->
+<!--        //     if (inputNumber === 0) {-->
+<!--        //         return "0th is not an nth.";-->
+<!--        //     } else if (inputNumber > inputArray.length) {-->
+<!--        //         return `${inputNumber} is larger than the number of children.`-->
+<!--        //     }-->
+<!--        //     else {-->
+<!--        //         return inputArray[inputNumber - 1];-->
+<!--        //     }-->
+<!--        // }-->
+<!--        // const getType = function(input) {-->
+<!--        //     let typeOfInput = typeof(input);-->
+<!--        //     return typeOfInput-->
+<!--        // }-->
+
+
+<!--        // let outputArray = [];-->
+<!--        // const putTwo = function (inputArray) {-->
+<!--        //     outputArray = inputArray.push(2);-->
+<!--        //     console.log(`This is in the function: ${outputArray}.`)-->
+<!--        //     return outputArray;-->
+<!--        // }-->
+<!--        // console.log(`This is outside of the function: ${outputArray}.`)-->
+<!--        // const greaterThanTen = function (inputNumber) {-->
+<!--        //     if (inputNumber > 10) {-->
+<!--        //         return true;-->
+<!--        //     } else {-->
+<!--        //         return false;-->
+<!--        //     }-->
+<!--        // }-->
+<!--        // const greaterThanTen = function (inputNumber) {-->
+<!--        //     return inputNumber > 10;-->
+<!--        // }-->
+<!--        // const youMayEnter = function (inputNumber) {-->
+<!--        //     return (inputNumber >= 13) ? "You may enter!" : "Sorry, you need a parent or guardian to enter.";-->
+<!--        // }-->
+<!--        // const seeYouLater = function (inputString) {-->
+<!--        //     if (typeof inputString === "string") {-->
+<!--        //         var newString = inputString.toLowerCase();-->
+<!--        //         if (newString === "alligator") {-->
+<!--        //             return "See you later alligator!";-->
+<!--        //         } else if (newString === "crocodile") {-->
+<!--        //             return "After a while crocodile!";-->
+<!--        //         } else {-->
+<!--        //             return "So long";-->
+<!--        //         }-->
+<!--        //     } else {-->
+<!--        //         return "Please input a string."-->
+<!--        //     }-->
+<!--        // }-->
+<!--        // const functionA(callbackFunction) {-->
+<!--        //     callbackFunction()-->
+<!--        // }-->
+<!--        // functionA(function (){-->
+<!--        //     alert("It works!");-->
+<!--        // })-->
+<!--// const contains = function (arr, param) {-->
+<!--//     return arr.includes(param);-->
+<!--// }-->
+<!--// const containsLoopMethod = function (arr, param) {-->
+<!--//     for (var i = 0; i < arr.length; i++) {-->
+<!--//         if (arr[i] === param) {-->
+<!--//             return true-->
+<!--//         }-->
+<!--//     } return false;-->
+<!--// }-->
+<!--//I am doing this for fun-->
+<!--//         function findCommonElements(arr1, arr2) {-->
+<!--//             return arr1.some(item => arr2.includes(item))-->
+<!--//         }-->
+<!--// console.log(contains([1, "cat", false, "6"], "cat"));-->
+<!--// console.log(containsLoopMethod([1, "cat", false, "6"], "dog"));-->
+<!--// console.log(findCommonElements([1, "cat", false, "6"], [4, "dog", 7, "6"]));-->
+
+<!--        // helloWorld();-->
+<!--        // helloName('Bob');-->
+<!--        // console.log(add(1, 1));-->
+<!--        // console.log(addFour(1, 2, 3, 4));-->
+<!--        // console.log(addFour("1", 2, 3, 4));-->
+<!--        // console.log(addFour(1, 2, 3, "4"));-->
+<!--        // console.log(addFour(add(1, 2), 2, 3, 4));-->
+<!--        // console.log(areaOfRectangle(2, 2));-->
+<!--        // console.log(areaOfRectangleArrow(2, 2));-->
+<!--        // console.log(firstItem([1, 2, 3, 4]));-->
+<!--        // console.log(firstItem(animalsAndNumber));-->
+<!--        // console.log(arrayLength(animalsAndNumber));-->
+<!--        // console.log(lastItem(animalsAndNumber));-->
+<!--        // console.log(nthItem(animalsAndNumber, 27));-->
+<!--        // console.log(getType(animalsAndNumber));-->
+<!--        // console.log(getType('Bob'));-->
+<!--        // const numberArray = [1, 2, 3, 4];-->
+<!--        // putTwo(numberArray);-->
+<!--        // console.log(`This is after the function is called: ${outputArray}.`)-->
+<!--        // for (i = 0; i < outputArray.length; i++) {-->
+<!--        //     console.log(outputArray[i]);-->
+<!--        // }-->
+<!--        // console.log(greaterThanTen(11));-->
+<!--        // console.log(greaterThanTen(10));-->
+<!--        // console.log(greaterThanTen(9));-->
+
+<!--        // console.log(youMayEnter(13));-->
+<!--        // console.log(seeYouLater("ALLIGator"));-->
+<!--        // console.log(seeYouLater("Cow"));-->
+<!--// START OVER HERE-->
+
+<!--// var santa = {-->
+<!--//     name: "Santa Claus",-->
+<!--//     niceList: ["Tom", "Harry", "Sue"],-->
+<!--//     naughtyList: ["Daniel", "Vivian", "Sophie"],-->
+<!--//     santaSays: function() {-->
+<!--//         return "Hello! Merry Christmas."-->
+<!--//     }-->
+<!--// }-->
+<!--// console.log(santa.santaSays());-->
+<!--// console.log(santa.name);-->
+<!--// const goldDeer = inputArr => {-->
+<!--//     var newArr = [];-->
+<!--//     inputArr.forEach(element => {-->
+<!--//         if (element.isGold === true) {-->
+<!--//             newArr.push(element)-->
+<!--//         }-->
+<!--//     return newArr;-->
+<!--//     })-->
+<!--//     return newArr;-->
+<!--// }-->
+<!--// var reindeerList = [-->
+<!--//     {-->
+<!--//         name: "Dot",-->
+<!--//         age: 5,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Dasher",-->
+<!--//         age: 8,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Patch",-->
+<!--//         age: 2,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Rocket",-->
+<!--//         age: 6,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Dancer",-->
+<!--//         age: 9,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Prancer",-->
+<!--//         age: 5,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Groot",-->
+<!--//         age: 9,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Vixen",-->
+<!--//         age: 9,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Comet",-->
+<!--//         age: 11,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Archie",-->
+<!--//         age: 3,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Cupid",-->
+<!--//         age: 13,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Donder",-->
+<!--//         age: 16,-->
+<!--//         isGold: true-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Boots",-->
+<!--//         age: 16,-->
+<!--//         isGold: false-->
+<!--//     },-->
+<!--//     {-->
+<!--//         name: "Blizten",-->
+<!--//         age: 16,-->
+<!--//         isGold: true-->
+<!--//     }-->
+<!--// ];-->
+<!--// console.log(goldDeer(reindeerList));-->
+<!--//         var hamsters = [-->
+<!--//             {-->
+<!--//                 name: "Hamtaro",-->
+<!--//                 heightInMM: 86,-->
+<!--//                 fur: ['orange', 'white'],-->
+<!--//                 gender: "male",-->
+<!--//                 dateOfBirth: "August 6"-->
+<!--//             } , {-->
+<!--//                 name: "Bijou",-->
+<!--//                 heightInMM: 75,-->
+<!--//                 fur: ['white'],-->
+<!--//                 gender: "female",-->
+<!--//                 dateOfBirth: "July 10"-->
+<!--//             } , {-->
+<!--//                 name: "Oxnard",-->
+<!--//                 heightInMM: 100,-->
+<!--//                 fur: ['grey', 'white'],-->
+<!--//                 gender: "male",-->
+<!--//                 dateOfBirth: "May 3"-->
+<!--//             } , {-->
+<!--//                 name: "Boss",-->
+<!--//                 heightInMM: 120,-->
+<!--//                 fur: ['brown', 'white'],-->
+<!--//                 gender: "male",-->
+<!--//                 dateOfBirth: "Spetember 21"-->
+<!--//             } , {-->
+<!--//                 name: "Snoozer",-->
+<!--//                 heightInMM: 85,-->
+<!--//                 fur: ['brown', 'white', "pink"],-->
+<!--//                 gender: "male",-->
+<!--//                 dateOfBirth: "January 14"-->
+<!--//             }-->
+<!--//         ];-->
+<!--//         const averageHamHeight = function(hamArr) {-->
+<!--//             let i = 0;-->
+<!--//             let total = 0;-->
+<!--//             hamArr.forEach(function(ham){-->
+<!--//                 total = ham.heightInMM + total;-->
+<!--//                 i++;-->
+<!--//             })-->
+<!--//             return total / i;-->
+<!--//         }-->
+<!--//-->
+<!--//         averageHamHeight(hamsters);-->
+
+
+<!--        //tests if word is an anagram-->
+<!--        // const isAnagram = (inputWord1, inputWord2) =>  inputWord1 === inputWord2 ? false : inputWord1.toLowerCase().split('').sort().join('') ===  inputWord2.toLowerCase().split('').sort().join('') ? true : false;-->
+<!--        //-->
+<!--        // console.log(isAnagram('Listen', 'SIlEnt'));-->
+<!--    </script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
-        "use strict";
-        // function helloWorld() {
-        //     return console.log(`Hello World.`);
-        // }
-        // function helloName(name) {
-        //     return console.log(`Hello ${name}.`);
-        // }
-        // function add(x, y) {
-        //     let sum = x + y;
-        //     return sum;
-        // }
-        // const addFour = function(a, b, c, d) {
-        //     let result = a + b + c +d;
-        //     return result;
-        // }
-        // // function addFour(a, b, c, d) {
-        // //     let result = a + b + c +d;
-        // //     return result;
-        // // }
-        // const areaOfRectangle = function(l, w) {
-        //     let area = l * w;
-        //     return area;
-        // }
-        // const areaOfRectangleArrow = (l, w) => {
-        //     return l * w;
-        // }
-        // function firstItem(array) {
-        //     return array[0];
-        // }
-        // function arrayLength(inputArray) {
-        //     return inputArray.length;
-        // }
-        // const lastItem = function (inputArray) {
-        //     return inputArray[inputArray.length - 1];
-        // }
-        // const animalsAndNumber = ['cat', 'moose', 'beaver', 'skunk', 4];
-        //
-        // const nthItem = function (inputArray, inputNumber) {
-        //     if (inputNumber === 0) {
-        //         return "0th is not an nth.";
-        //     } else if (inputNumber > inputArray.length) {
-        //         return `${inputNumber} is larger than the number of children.`
-        //     }
-        //     else {
-        //         return inputArray[inputNumber - 1];
-        //     }
-        // }
-        // const getType = function(input) {
-        //     let typeOfInput = typeof(input);
-        //     return typeOfInput
-        // }
+        (() => {
+            'use strict';
+            $(document).ready(() => {
+                const ratingMessage = (movieObjArr) => {
+                    console.log($('#rating-message-container').html());
+                    console.log(movieObjArr);
+                    // $('#loading').remove();
+                    for (const movie of movieObjArr) {
+                        console.log(movie);
+                        for (const property in movie) {
+                            console.log(property);
+                            console.log(movie[property]);
+                            if (property === "Rating" && movie[property] === "5") {
+                                console.log(`if 5`);
+                                $('#rating-message-container').append(`<div class="rating-message" id="rating-message-${movie['Title']}">${movie['Title']} is fantastic. </div>`);
+                            } else if (property === "Rating" && movie[property] === "4") {
+                                console.log(`else if 4`);
+                                $('#rating-message-container').append(`<div class="rating-message" id="rating-message-${movie['Title']}">${movie['Title']} is above average. </div>`);
+                            } else if (property === "Rating" && movie[property] === "2") {
+                                console.log(`else if 2`);
+                                $('#rating-message-container').append(`<div class="rating-message" id="rating-message-${movie['Title']}">${movie['Title']} is below average. </div>`);
+                            } else if (property === "Rating" && movie[property] === "1") {
+                                console.log(`else if 1`);
+                                $('#rating-message-container').append(`<div class="rating-message" id="rating-message-${movie['Title']}">${movie['Title']} is terrible. </div>`);
+                            }
+                        }
+                    };
+                }
+                let inputArr = [
+                    {
+                        "Title": "Star Wars: Episode III - Revenge of the Sith",
+                        "Overview": "Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. As Obi-Wan pursues a new threat, Anakin acts as a double agent between the Jedi Council and Palpatine and is lured into a sinister plan to rule the galaxy.",
+                        "Year": "2005",
+                        "Rated": "PG-13",
+                        "Genre": "Action, Adventure, Fantasy, Sci-Fi",
+                        "Image": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
+                        "Website": "N/A",
+                        "imdbRating": "7.5",
+                        "Rating": "5",
+                        "id": 1
+                    },
+                    {
+                        "Title": "Star Wars: Episode IV - A New Hope",
+                        "Overview": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+                        "Year": "1977",
+                        "Rated": "PG",
+                        "Genre": "Action, Adventure, Fantasy, Sci-Fi",
+                        "Image": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                        "Website": "N/A",
+                        "imdbRating": "8.6",
+                        "Rating": "4",
+                        "id": 2
+                    },
+                    {
+                        "Title": "The Lord of the Rings: The Fellowship of the Ring",
+                        "Overview": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+                        "Year": "2001",
+                        "Rated": "PG-13",
+                        "Genre": "Adventure, Drama, Fantasy",
+                        "Image": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+                        "Website": "N/A",
+                        "imdbRating": "8.8",
+                        "Rating": "4",
+                        "id": 3
+                    },
+                    {
+                        "Title": "Cows Is Cows",
+                        "Overview": "Cows is cows is cows.",
+                        "Year": "2030",
+                        "Rated": "NC-17",
+                        "Genre": "Farm, Animals",
+                        "Website": "Cows is cows is cows.",
+                        "imdbRating": "9.8",
+                        "Rating": "1",
+                        "id": 4
+                    },
+                    {
+                        "Title": "Solo: A Star Wars Story",
+                        "Overview": "During an adventure into the criminal underworld, Han Solo meets his future co-pilot Chewbacca and encounters Lando Calrissian years before joining the Rebellion.",
+                        "Year": "2018",
+                        "Rated": "PG-13",
+                        "Genre": "Action, Adventure, Sci-Fi",
+                        "Image": "https://m.media-amazon.com/images/M/MV5BOTM2NTI3NTc3Nl5BMl5BanBnXkFtZTgwNzM1OTQyNTM@._V1_SX300.jpg",
+                        "Website": "N/A",
+                        "imdbRating": "6.9",
+                        "Rating": "4",
+                        "id": 5
+                    },
+                    {
+                        "Title": "Star Trek: First Contact",
+                        "Overview": "The Borg travel back in time intent on preventing Earth's first contact with an alien species. Captain Picard and his crew pursue them to ensure that Zefram Cochrane makes his maiden flight reaching warp speed.",
+                        "Year": "1996",
+                        "Rated": "PG-13",
+                        "Genre": "Action, Adventure, Drama, Sci-Fi, Thriller",
+                        "Image": "https://m.media-amazon.com/images/M/MV5BYTllZjRkY2QtYTJlMy00ZTMxLWE0YWQtMWMwYzY2YTM3YzRjXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+                        "Website": "N/A",
+                        "imdbRating": "7.6",
+                        "Rating": "1",
+                        "id": 6
+                    }
+                ];
+                ratingMessage(inputArr);
 
-
-        // let outputArray = [];
-        // const putTwo = function (inputArray) {
-        //     outputArray = inputArray.push(2);
-        //     console.log(`This is in the function: ${outputArray}.`)
-        //     return outputArray;
-        // }
-        // console.log(`This is outside of the function: ${outputArray}.`)
-        // const greaterThanTen = function (inputNumber) {
-        //     if (inputNumber > 10) {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-        // const greaterThanTen = function (inputNumber) {
-        //     return inputNumber > 10;
-        // }
-        // const youMayEnter = function (inputNumber) {
-        //     return (inputNumber >= 13) ? "You may enter!" : "Sorry, you need a parent or guardian to enter.";
-        // }
-        // const seeYouLater = function (inputString) {
-        //     if (typeof inputString === "string") {
-        //         var newString = inputString.toLowerCase();
-        //         if (newString === "alligator") {
-        //             return "See you later alligator!";
-        //         } else if (newString === "crocodile") {
-        //             return "After a while crocodile!";
-        //         } else {
-        //             return "So long";
-        //         }
-        //     } else {
-        //         return "Please input a string."
-        //     }
-        // }
-        // const functionA(callbackFunction) {
-        //     callbackFunction()
-        // }
-        // functionA(function (){
-        //     alert("It works!");
-        // })
-// const contains = function (arr, param) {
-//     return arr.includes(param);
-// }
-// const containsLoopMethod = function (arr, param) {
-//     for (var i = 0; i < arr.length; i++) {
-//         if (arr[i] === param) {
-//             return true
-//         }
-//     } return false;
-// }
-//I am doing this for fun
-//         function findCommonElements(arr1, arr2) {
-//             return arr1.some(item => arr2.includes(item))
-//         }
-// console.log(contains([1, "cat", false, "6"], "cat"));
-// console.log(containsLoopMethod([1, "cat", false, "6"], "dog"));
-// console.log(findCommonElements([1, "cat", false, "6"], [4, "dog", 7, "6"]));
-
-        // helloWorld();
-        // helloName('Bob');
-        // console.log(add(1, 1));
-        // console.log(addFour(1, 2, 3, 4));
-        // console.log(addFour("1", 2, 3, 4));
-        // console.log(addFour(1, 2, 3, "4"));
-        // console.log(addFour(add(1, 2), 2, 3, 4));
-        // console.log(areaOfRectangle(2, 2));
-        // console.log(areaOfRectangleArrow(2, 2));
-        // console.log(firstItem([1, 2, 3, 4]));
-        // console.log(firstItem(animalsAndNumber));
-        // console.log(arrayLength(animalsAndNumber));
-        // console.log(lastItem(animalsAndNumber));
-        // console.log(nthItem(animalsAndNumber, 27));
-        // console.log(getType(animalsAndNumber));
-        // console.log(getType('Bob'));
-        // const numberArray = [1, 2, 3, 4];
-        // putTwo(numberArray);
-        // console.log(`This is after the function is called: ${outputArray}.`)
-        // for (i = 0; i < outputArray.length; i++) {
-        //     console.log(outputArray[i]);
-        // }
-        // console.log(greaterThanTen(11));
-        // console.log(greaterThanTen(10));
-        // console.log(greaterThanTen(9));
-
-        // console.log(youMayEnter(13));
-        // console.log(seeYouLater("ALLIGator"));
-        // console.log(seeYouLater("Cow"));
-// START OVER HERE
-
-// var santa = {
-//     name: "Santa Claus",
-//     niceList: ["Tom", "Harry", "Sue"],
-//     naughtyList: ["Daniel", "Vivian", "Sophie"],
-//     santaSays: function() {
-//         return "Hello! Merry Christmas."
-//     }
-// }
-// console.log(santa.santaSays());
-// console.log(santa.name);
-// const goldDeer = inputArr => {
-//     var newArr = [];
-//     inputArr.forEach(element => {
-//         if (element.isGold === true) {
-//             newArr.push(element)
-//         }
-//     return newArr;
-//     })
-//     return newArr;
-// }
-// var reindeerList = [
-//     {
-//         name: "Dot",
-//         age: 5,
-//         isGold: false
-//     },
-//     {
-//         name: "Dasher",
-//         age: 8,
-//         isGold: true
-//     },
-//     {
-//         name: "Patch",
-//         age: 2,
-//         isGold: false
-//     },
-//     {
-//         name: "Rocket",
-//         age: 6,
-//         isGold: false
-//     },
-//     {
-//         name: "Dancer",
-//         age: 9,
-//         isGold: true
-//     },
-//     {
-//         name: "Prancer",
-//         age: 5,
-//         isGold: true
-//     },
-//     {
-//         name: "Groot",
-//         age: 9,
-//         isGold: false
-//     },
-//     {
-//         name: "Vixen",
-//         age: 9,
-//         isGold: true
-//     },
-//     {
-//         name: "Comet",
-//         age: 11,
-//         isGold: true
-//     },
-//     {
-//         name: "Archie",
-//         age: 3,
-//         isGold: false
-//     },
-//     {
-//         name: "Cupid",
-//         age: 13,
-//         isGold: true
-//     },
-//     {
-//         name: "Donder",
-//         age: 16,
-//         isGold: true
-//     },
-//     {
-//         name: "Boots",
-//         age: 16,
-//         isGold: false
-//     },
-//     {
-//         name: "Blizten",
-//         age: 16,
-//         isGold: true
-//     }
-// ];
-// console.log(goldDeer(reindeerList));
-//         var hamsters = [
-//             {
-//                 name: "Hamtaro",
-//                 heightInMM: 86,
-//                 fur: ['orange', 'white'],
-//                 gender: "male",
-//                 dateOfBirth: "August 6"
-//             } , {
-//                 name: "Bijou",
-//                 heightInMM: 75,
-//                 fur: ['white'],
-//                 gender: "female",
-//                 dateOfBirth: "July 10"
-//             } , {
-//                 name: "Oxnard",
-//                 heightInMM: 100,
-//                 fur: ['grey', 'white'],
-//                 gender: "male",
-//                 dateOfBirth: "May 3"
-//             } , {
-//                 name: "Boss",
-//                 heightInMM: 120,
-//                 fur: ['brown', 'white'],
-//                 gender: "male",
-//                 dateOfBirth: "Spetember 21"
-//             } , {
-//                 name: "Snoozer",
-//                 heightInMM: 85,
-//                 fur: ['brown', 'white', "pink"],
-//                 gender: "male",
-//                 dateOfBirth: "January 14"
-//             }
-//         ];
-//         const averageHamHeight = function(hamArr) {
-//             let i = 0;
-//             let total = 0;
-//             hamArr.forEach(function(ham){
-//                 total = ham.heightInMM + total;
-//                 i++;
-//             })
-//             return total / i;
-//         }
-//
-//         averageHamHeight(hamsters);
-
-
-        //tests if word is an anagram
-        const isAnagram = (inputWord1, inputWord2) =>  inputWord1 === inputWord2 ? false : inputWord1.toLowerCase().split('').sort().join('') ===  inputWord2.toLowerCase().split('').sort().join('') ? true : false;
-
-        console.log(isAnagram('Listen', 'SIlEnt'));
-    </script>
-<!--    li.item$*5-->
-    <li class="item1"></li>
-    <li class="item2"></li>
-    <li class="item3"></li>
-    <li class="item4"></li>
-    <li class="item5"></li>
-<!--    div#item$*5-->
-    <div id="item1"></div>
-    <div id="item2"></div>
-    <div id="item3"></div>
-    <div id="item4"></div>
-    <div id="item5"></div>
-<!--   ul>li#list-item$*5 -->
-    <ul>
-        <li id="list-item1"></li>
-        <li id="list-item2"></li>
-        <li id="list-item3"></li>
-        <li id="list-item4"></li>
-        <li id="list-item5"></li>
-    </ul>
-<!--    ul>li#$*5-->
-    <ul>
-        <li id="1"></li>
-        <li id="2"></li>
-        <li id="3"></li>
-        <li id="4"></li>
-        <li id="5"></li>
-    </ul>
+            });
+        })();
+        </script>
     </body>
 </html>
