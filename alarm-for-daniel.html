@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alarm For Daniel</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .stop {
+            background-color: red;
+        }
+        .go {
+            background-color: green;
+        }
+    </style>
+</head>
+<body class="stop">
+<h1 id="not-start">It is not time to start class.</h1>
+<h1 id="start" class="hidden">It is time to start class</h1>
+<script>
+    function stopInterval() {
+        clearInterval(myInterval);
+    }
+    const myInterval = setInterval(function() {
+        const today = new Date();
+        const hours = today.getHours();
+        const mins = today.getMinutes();
+        console.log("interval");
+        if(hours == 9 && mins == 30) {
+            const notStart = document.getElementById("not-start");
+            const start = document.getElementById("start");
+            document.body.classList.remove("stop");
+            document.body.classList.add("go")
+            notStart.classList.add("hidden");
+            start.classList.remove("hidden");
+            stopInterval();
+        }
+    }, 5000)
+</script>
+</body>
+</html>

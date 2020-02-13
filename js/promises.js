@@ -13,13 +13,17 @@ const wait = function (time) {
 
 // wait(1000).then(() => console.log(`You'll see this after 1 second`));
 
-function getGithubUserData(username) {
+function getGithubLastUserCommit(username) {
     return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`, {
         headers: {
             'Authorization': githubKey,
             'Accept': 'application/vnd.github.cloak-preview'
         }
     })
+        .then(response => {
+            console.log(response);
+            return response;
+        })
         .then(response => response.json())
         .then(res => {
             console.log(res);
@@ -38,28 +42,28 @@ function getGithubUserData(username) {
         })
 };
 
-console.log(getGithubUserData('nolandseigler'));
+console.log(getGithubLastUserCommit('nolandseigler'));
 
-// function getGithubUserDataWithEvents (username) {
-//     return fetch (`https://api.github.com/users/${username}/events`, {
-//         headers: {
-//             'Authorization': githubKey
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(res => res.find(element => element['type'] === 'PushEvent'))
-//         .then(data => {
-//             let commit = data['payload']['commits'][0];
-//             let eventInfo = {
-//                 sha: commit['sha'],
-//                 url: commit['url'],
-//                 committer: commit['author']['name'],
-//                 date: data['created_at'],
-//                 message: commit['message'],
-//                 repository: data['repo']['name'],
-//                 repositoryOwner: `Could not find this using this endpoint(events)`
-//             }
-//             return eventInfo;
-//         })
-// }
-// console.log(getGithubUserDataWithEvents('nolandseigler'));
+function getGithubLastUserCommitWithEvents (username) {
+    return fetch (`https://api.github.com/users/${username}/events`, {
+        headers: {
+            'Authorization': `token ${githubKey}`
+        }
+    })
+        .then(response => response.json())
+        .then(res => res.find(element => element['type'] === 'PushEvent'))
+        .then(data => {
+            let commit = data['payload']['commits'][0];
+            let eventInfo = {
+                sha: commit['sha'],
+                url: commit['url'],
+                committer: commit['author']['name'],
+                date: data['created_at'],
+                message: commit['message'],
+                repository: data['repo']['name'],
+                repositoryOwner: `Could not find this using this endpoint(events)`
+            }
+            return eventInfo;
+        })
+}
+console.log(getGithubLastUserCommitWithEvents('nolandseigler'));
